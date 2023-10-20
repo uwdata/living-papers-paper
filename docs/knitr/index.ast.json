@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "author": [
+      {
+        "name": "Living Papers Team"
+      }
+    ],
+    "output": {
+      "api": true,
+      "ast": {
+        "space": "2"
+      },
+      "html": true,
+      "latex": true
+    },
+    "title": "R Knitr Integration",
+    "transforms": {
+      "knitr": {
+        "dev": "svglite",
+        "import": [
+          "ggplot2",
+          "jsonlite"
+        ]
+      }
+    }
+  },
+  "article": {
+    "type": "component",
+    "name": "article",
+    "children": [
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "This article demonstrates compile-time evaluation of R code, with results stitched back into the Living Papers article. JSON-serialized values can also be bound to variables in the reactive runtime."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "R version: "
+          },
+          {
+            "type": "component",
+            "name": "strong",
+            "children": [
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "R version 4.1.3 (2022-03-10)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "plots"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Plots"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Let’s make some plots."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "figure margin"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "alt": {
+                "type": "value",
+                "value": "Plot generated in R"
+              },
+              "src": {
+                "type": "value",
+                "value": "knitr/r1-1.svg"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Histogram of random variates."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "figure"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "alt": {
+                "type": "value",
+                "value": "Plot generated in R"
+              },
+              "src": {
+                "type": "value",
+                "value": "knitr/r2-1.svg"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Density plot of Old Faithful"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "linear-model"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Linear Model"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Let’s fit a model: "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "properties": {
+              "language": {
+                "type": "value",
+                "value": "r"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "lm(hwy ~ displ, data = mpg)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "figure page"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "alt": {
+                "type": "value",
+                "value": "Plot generated in R"
+              },
+              "src": {
+                "type": "value",
+                "value": "knitr/r4-1.svg"
+              },
+              "width": {
+                "type": "value",
+                "value": "50%"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "alt": {
+                "type": "value",
+                "value": "Plot generated in R"
+              },
+              "src": {
+                "type": "value",
+                "value": "knitr/r4-2.svg"
+              },
+              "width": {
+                "type": "value",
+                "value": "50%"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "(Left) Displacement vs. highway efficiency. (Right) Residual plot."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Model summary:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "codeblock",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "small"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "\nCall:\nlm(formula = hwy ~ displ, data = mpg)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-7.1039 -2.1646 -0.2242  2.0589 15.0105 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  35.6977     0.7204   49.55   <2e-16 ***\ndispl        -3.5306     0.1945  -18.15   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.836 on 232 degrees of freedom\nMultiple R-squared:  0.5868,    Adjusted R-squared:  0.585 \nF-statistic: 329.5 on 1 and 232 DF,  p-value: < 2.2e-16"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "properties": {
+          "hide": {
+            "type": "value",
+            "value": true
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "coef = ([35.6977,-3.5306] )"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "The fitted line is "
+          },
+          {
+            "type": "component",
+            "name": "math",
+            "properties": {
+              "mode": {
+                "type": "value",
+                "value": "inline"
+              },
+              "code": {
+                "type": "expression",
+                "value": "`y = ${coef[1]} x + ${coef[0]}`"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "et-cetera"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Et Cetera"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "The square root of 5 is "
+          },
+          {
+            "type": "component",
+            "name": "span",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "italic"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "2.236068"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      }
+    ]
+  }
+}

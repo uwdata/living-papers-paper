@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Living Papers API Inspector</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      p { max-width: 700px; }
+      body { padding: 0 1em; }
+      #output { margin-top: 1em; }
+      td, th { padding-right: 1em; }
+      th { text-align: left; }
+      li { margin-bottom: 0.5em }
+    </style>
+  </head>
+  <body>
+    <h1>Living Papers API Inspector</h1>
+    <p>
+      This page loads an exported API module as a dynamic JavaScript import:
+    </p>
+    <blockquote>
+      <code>const { default: api } = await import(`../living-papers/api.mjs`);</code>
+    </blockquote>
+    </p>
+      The page then queries the API for paper content.
+      For example, to extract a figure and caption it invokes:
+    </p>
+    <blockquote>
+      <code>api.figureImage(index)</code><br/>
+      <code>api.figureCaption(index)</code>
+    </blockquote>
+    <hr/>
+    <br/>
+    <div>
+      <strong>Article:</strong>
+      <select id="article">
+        <option value="none">---</option>
+        <option value="living-papers">The Living Papers UIST'23 Submission</option>
+        <option value="intro">An Introduction to Living Papers</option>
+        <option value="fast-kde">Fast &amp; Accurate Kernel Density Estimation</option>
+        <option value="lucas-kanade">An Iterative Image Registration Technique</option>
+        <option value="multiverse">Explorable Multiverse Analysis</option>
+        <option value="barnes-hut">The Barnes-Hut Approximation</option>
+        <option value="zoomable">Zoomable Paper Reader</option>
+      </select>
+    </div>
+    <div id="output">
+    </div>
+    <script>
+      const menu = document.querySelector('#article');
+      const output = document.querySelector('#output');
+      menu.addEventListener('input', async () => {
+        const name = menu.value;
+        if (name === 'none') {
+          output.replaceChildren('No paper selected.');
+        } else {
+          const { default: api } = await import(`../${name}/api.mjs`);
+          inspect(api, output);
+        }
+      });
+
+      function inspect(api, output) {
+        output.replaceChildren(
+          header('Metadata'),
+          meta(api),
+          header('Abstract'),
+          para(api.abstract || em('No abstract.')),
+          header('Figures'),
+          figures(api),
+          header('Tables'),
+          tables(api),
+          header('Equations'),
+          equations(api),
+          header('References (as BibTeX)'),
+          references(api)
+        );
+      }
+
+      function figures(api) {
+        const num = api.figureNodes?.length ?? 0;
+        if (num) {
+          const { table, tbody } = makeTable(['number', 'image', 'caption']);
+          for (let i = 0; i < num; ++i) {
+            tbody.appendChild(row(
+              cell(i + 1),
+              cell(image(api.figureImage(i))),
+              cell(api.figureCaption(i))
+            ))
+          }
+          return table;
+        } else {
+          return para(em('No numbered figures.'));
+        }
+      }
+
+      function tables(api) {
+        const num = api.tableNodes?.length ?? 0;
+        if (num) {
+          const { table, tbody } = makeTable(['number', 'image', 'caption']);
+          for (let i = 0; i < num; ++i) {
+            tbody.appendChild(row(
+              cell(i + 1),
+              cell(image(api.tableImage(i))),
+              cell(api.tableCaption(i))
+            ))
+          }
+          return table;
+        } else {
+          return para(em('No numbered tables.'));
+        }
+      }
+
+      function equations(api) {
+        const num = api.equationNodes?.length ?? 0;
+        if (num) {
+          const { table, tbody } = makeTable(['number', 'image']);
+          for (let i = 0; i < num; ++i) {
+            tbody.appendChild(row(
+              cell(i + 1),
+              cell(image(api.equationImage(i)))
+            ))
+          }
+          return table;
+        } else {
+          return para(em('No numbered equations.'));
+        }
+      }
+
+      function image(src, caption) {
+        const div = document.createElement('div');
+        div.style.maxWidth = '500px';
+        const img = document.createElement('img');
+        img.style.objectFit = 'scale-down';
+        img.style.minWidth = '300px';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+        img.setAttribute('src', src);
+        div.appendChild(img);
+        return div;
+      }
+
+      function meta(api) {
+        const { table, tbody } = makeTable(['field', 'value']);
+        ['title', 'venue', 'year', 'doi'].forEach(field => {
+          const value = api[field];
+          tbody.appendChild(row(
+            cell(field),
+            cell(api[field] || em('undefined'))
+          ));
+        });
+
+        return table;
+      }
+
+      function references(api) {
+        const bibs = api.referencesBibtex;
+        if (bibs?.length) {
+          const ol = document.createElement('ol');
+          for (const bib of bibs) {
+            const li = document.createElement('li');
+            li.innerText = bib;
+            ol.appendChild(li);
+          }
+          return ol;
+        } else {
+          return para(em('No references.'));
+        }
+      }
+
+      function header(text) {
+        const h = document.createElement('h2');
+        h.innerText = text;
+        return h;
+      }
+
+      function para(content) {
+        const p = document.createElement('p');
+        if (typeof content === 'object') {
+          p.appendChild(content);
+        } else {
+          p.innerText = content;
+        }
+        return p;
+      }
+
+      function em(text) {
+        const el = document.createElement('em');
+        el.innerText = text;
+        return el;
+      }
+
+      function makeTable(columnNames) {
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const cols = columnNames.map(name => cell(name, 'th'));
+        thead.appendChild(row(...cols));
+        const tbody = document.createElement('tbody');
+        table.replaceChildren(thead, tbody);
+        return { table, tbody };
+      }
+
+      function row(...cells) {
+        const trow = document.createElement('tr');
+        for (const cell of cells) {
+          trow.appendChild(cell);
+        }
+        return trow;
+      }
+
+      function cell(content, tag = 'td') {
+        const tcell = document.createElement(tag);
+        if (content) {
+          if (typeof content === 'object') {
+            tcell.appendChild(content);
+          } else {
+            tcell.innerText = content;
+          }
+        }
+        return tcell;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "@uwdata/living-papers-paper",
+  "description": "Research papers on Living Papers.",
+  "repository": "uwdata/living-papers-paper",
+  "scripts": {
+    "assets": "mkdirp build && cp -r assets build",
+    "clean": "rimraf .cache .temp build",
+    "prebuild": "npm run assets",
+    "build": "lpub -o build --tempDir='.temp' living-papers.md",
+    "prewatch": "npm run assets",
+    "watch": "lpub -o build --tempDir='.temp' --watch living-papers.md"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "~0.1.5",
+    "mkdirp": "^2.1.6",
+    "rimraf": "^4.4.1"
+  },
+  "living-papers": {
+    "components": [
+      {
+        "name": "barnes-hut",
+        "file": "src/barnes-hut.js",
+        "css": "src/barnes-hut.css"
+      },
+      {
+        "name": "tex-math",
+        "import": "TexMath",
+        "file": "src/tex-math.js",
+        "css": "src/tex-math.css"
+      },
+      {
+        "name": "tex-equation",
+        "import": "TexEquation",
+        "file": "src/tex-equation.js",
+        "css": "src/tex-math.css"
+      }
+    ],
+    "transforms": [
+      {
+        "name": "definitions",
+        "file": "src/definitions.js"
+      }
+    ]
+  }
+}

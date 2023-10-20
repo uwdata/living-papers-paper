@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "description": "Barnes-Hut Approximation Living Papers example article.",
+  "scripts": {
+    "prebuild": "mkdirp build && cp probe.svg build",
+    "build": "lpub -o build index.md"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "*",
+    "@living-papers/components": "*",
+    "mkdirp": "^1.0.4"
+  },
+  "living-papers": {
+    "components": [
+      {
+        "name": "barnes-hut",
+        "file": "src/barnes-hut.js",
+        "css": "src/barnes-hut.css"
+      },
+      {
+        "name": "error-plot",
+        "file": "src/error-plot.js",
+        "css": "src/vega-plot.css"
+      },
+      {
+        "name": "time-plot",
+        "file": "src/time-plot.js",
+        "css": "src/vega-plot.css"
+      }
+    ]
+  }
+}

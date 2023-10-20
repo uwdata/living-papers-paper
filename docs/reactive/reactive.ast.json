@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "author": [
+      {
+        "name": "Living Papers Team"
+      }
+    ],
+    "output": {
+      "api": true,
+      "ast": {
+        "space": "2"
+      },
+      "html": true,
+      "latex": true,
+      "runtime": true
+    },
+    "title": "Reactive Runtime Example"
+  },
+  "article": {
+    "type": "component",
+    "name": "article",
+    "children": [
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "This article provides a simple demonstration of Living Papers’ reactive runtime."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "properties": {
+          "hide": {
+            "type": "value",
+            "value": "true"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "init = 128"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "properties": {
+          "hide": {
+            "type": "value",
+            "value": "static"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "viewof a = Inputs.range([0, 255], {step: 1, value: init})"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "figure"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "cell-view",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "format = new Intl.NumberFormat().format\n---\nplot = Plot.plot({\n  marginLeft: 50,\n  y: { grid: true },\n  marks: [\n    Plot.ruleX([a], { stroke: '#888' }),\n    Plot.line(d3.range(0, Math.max(256, a)), { x: d => d, y: d => d * d, stroke: 'steelblue', strokeWidth: 2 }),\n    Plot.dot([a], { x: d => d, y: d => d * d, fill: 'steelblue' })\n  ],\n  height: 300\n})"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "A plot of "
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "value",
+                    "value": "y = x^2"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": " at "
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "expression",
+                    "value": "`x = ${a}`"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": ", "
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "expression",
+                    "value": "`x^2 = ${a * a}`"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "The square of "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "a"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " is "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "format(a * a)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "div",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "html:only"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "p",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Living Papers articles can also import reactive runtime content from other articles.\nHere is "
+              },
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "./import"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "an article that reuses this article’s plot"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "!"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "@living-papers/example-lucas-kanade",
+  "license": "BSD-3-Clause",
+  "repository": "uwdata/living-papers-examples",
+  "scripts": {
+    "assets": "mkdirp build && cp -r assets build",
+    "clean": "rimraf .cache .temp build",
+    "prebuild": "npm run assets",
+    "build": "lpub -o build --tempDir='.temp' index.md",
+    "prewatch": "npm run assets",
+    "watch": "lpub -o build --tempDir='.temp' --watch index.md",
+    "predeploy": "rimraf ../../docs",
+    "deploy": "cp build ../../docs -r"
+  },
+  "devDependencies": {
+    "@living-papers/ast": "^0.1.0",
+    "@living-papers/cli": "^0.1.4",
+    "@living-papers/components": "^0.1.4",
+    "gh-pages": "^5.0.0",
+    "mkdirp": "^2.1.6",
+    "rimraf": "^4.4.1"
+  },
+  "living-papers": {
+    "components": [
+      {
+        "name": "tex-math",
+        "import": "TexMath",
+        "file": "src/tex-math.js",
+        "css": "src/tex-math.css"
+      },
+      {
+        "name": "tex-equation",
+        "import": "TexEquation",
+        "file": "src/tex-equation.js",
+        "css": "src/tex-math.css"
+      }
+    ],
+    "transforms": [
+      {
+        "name": "definitions",
+        "file": "src/definitions.js"
+      }
+    ]
+  }
+}

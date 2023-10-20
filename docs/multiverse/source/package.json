@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "@living-papers/example-multiverse",
+  "description": "Living Papers example article with explorable multiverse analysis.",
+  "scripts": {
+    "assets": "mkdirp build && cp -r assets build",
+    "clean": "rimraf .cache .temp build",
+    "prebuild": "npm run assets",
+    "build": "lpub -o build --tempDir='.temp' index.md",
+    "prewatch": "npm run assets",
+    "watch": "lpub -o build --tempDir='.temp' --watch index.md"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "^0.1.0",
+    "@living-papers/components": "^0.1.0",
+    "gh-pages": "^5.0.0",
+    "mkdirp": "^2.1.5",
+    "rimraf": "^4.4.0"
+  }
+}

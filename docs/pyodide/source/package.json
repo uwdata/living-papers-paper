@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "@living-papers/example-pyodide",
+  "description": "Living Papers example with Python code cells.",
+  "scripts": {
+    "build": "lpub -o build index.md"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "*"
+  }
+}

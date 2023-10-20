@@ -1,0 +1,2889 @@
+{
+  "metadata": {
+    "author": [
+      {
+        "name": "Living Papers Team"
+      }
+    ],
+    "keywords": [
+      "all",
+      "about",
+      "my",
+      "article"
+    ],
+    "output": {
+      "api": true,
+      "ast": {
+        "space": "2"
+      },
+      "html": true,
+      "latex": true
+    },
+    "title": "An Introduction to Living Papers"
+  },
+  "article": {
+    "type": "component",
+    "name": "article",
+    "children": [
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "teaser"
+          },
+          "class": {
+            "type": "value",
+            "value": "teaser"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "src": {
+                "type": "value",
+                "value": "assets/squarebow.svg"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "A teaser image for the beginning of our article. "
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "properties": {
+                  "class": {
+                    "type": "value",
+                    "value": "html:only"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Scroll down for an interactive version!"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "abstract",
+        "children": [
+          {
+            "type": "component",
+            "name": "p",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "With Living Papers, you can author an interactive web page or standard reseach paper from Markdown source documents.\nThis example article demonstrates the basic syntax and functionality of a Living Papers document.\nCompare the "
+              },
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://raw.githubusercontent.com/uwdata/living-papers-template/main/index.md"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "source markup"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " and the resulting "
+              },
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://uwdata.github.io/living-papers-template/"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "rendered web page"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "!"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "basic-formatting"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Basic Formatting"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Basic formatting includes:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "ul",
+        "children": [
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Inline text with "
+              },
+              {
+                "type": "component",
+                "name": "em",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "italics"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ", "
+              },
+              {
+                "type": "component",
+                "name": "strong",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ", or "
+              },
+              {
+                "type": "component",
+                "name": "strong",
+                "children": [
+                  {
+                    "type": "component",
+                    "name": "em",
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "both"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Inline code "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "x = Math.PI * r * r"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Inline code with syntax highlighting "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "properties": {
+                  "language": {
+                    "type": "value",
+                    "value": "js"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "x = Math.PI * r * r"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Inline math "
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "value",
+                    "value": "x = \\pi * r^2"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Super"
+              },
+              {
+                "type": "component",
+                "name": "sup",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "script"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ", sub"
+              },
+              {
+                "type": "component",
+                "name": "sub",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "script"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ", and "
+              },
+              {
+                "type": "component",
+                "name": "s",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "strikethrough"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://github.com/uwdata/living-papers"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Hyperlinks"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " and "
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "properties": {
+                  "class": {
+                    "type": "value",
+                    "value": "smaller"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "component",
+                    "name": "span",
+                    "properties": {
+                      "class": {
+                        "type": "value",
+                        "value": "underline"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "styled spans"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Lists (like this one!)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "raw",
+        "properties": {
+          "format": {
+            "type": "value",
+            "value": "html"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "<!--\nWe can use HTML comment syntax for content we don't want in the output.\n-->"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "math-equations"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Math & Equations"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Mathematical notation is specified using "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://en.wikibooks.org/wiki/LaTeX/Mathematics"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "TeX syntax"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ".\nInline math ("
+          },
+          {
+            "type": "component",
+            "name": "math",
+            "properties": {
+              "mode": {
+                "type": "value",
+                "value": "inline"
+              },
+              "code": {
+                "type": "value",
+                "value": "e^{i\\pi}"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": "), "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "math"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " blocks, and numbered "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "equation"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " blocks are supported.\nCompare a "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "math"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " block:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "math",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "-b \\pm \\sqrt{b^2 - 4ac} \\over 2a"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "And an "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "equation"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " block:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "equation",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "ratio"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "\\frac{a + b}{a} = \\frac{a}{b} = \\phi"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "figures-tables"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Figures & Tables"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "raw",
+        "properties": {
+          "format": {
+            "type": "value",
+            "value": "html"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "<!--\nFigures and tables are placed in the main column by default.\nUse the {.margin} class to place them in the right margin,\nor use the `{.page}` class to span the page width.\n-->"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "irrational"
+          },
+          "class": {
+            "type": "value",
+            "value": "table margin"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "table",
+            "children": [
+              {
+                "type": "component",
+                "name": "thead",
+                "children": [
+                  {
+                    "type": "component",
+                    "name": "tr",
+                    "children": [
+                      {
+                        "type": "component",
+                        "name": "th",
+                        "properties": {
+                          "class": {
+                            "type": "value",
+                            "value": "left"
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "textnode",
+                            "value": "Symbol"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "component",
+                        "name": "th",
+                        "children": [
+                          {
+                            "type": "textnode",
+                            "value": "Value"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "tbody",
+                "children": [
+                  {
+                    "type": "component",
+                    "name": "tr",
+                    "children": [
+                      {
+                        "type": "component",
+                        "name": "td",
+                        "properties": {
+                          "class": {
+                            "type": "value",
+                            "value": "left"
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "component",
+                            "name": "math",
+                            "properties": {
+                              "mode": {
+                                "type": "value",
+                                "value": "inline"
+                              },
+                              "code": {
+                                "type": "value",
+                                "value": "\\phi"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "component",
+                        "name": "td",
+                        "children": [
+                          {
+                            "type": "textnode",
+                            "value": "1.618033…"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "component",
+                    "name": "tr",
+                    "children": [
+                      {
+                        "type": "component",
+                        "name": "td",
+                        "properties": {
+                          "class": {
+                            "type": "value",
+                            "value": "left"
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "component",
+                            "name": "math",
+                            "properties": {
+                              "mode": {
+                                "type": "value",
+                                "value": "inline"
+                              },
+                              "code": {
+                                "type": "value",
+                                "value": "\\pi"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "component",
+                        "name": "td",
+                        "children": [
+                          {
+                            "type": "textnode",
+                            "value": "3.141519…"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "component",
+                    "name": "tr",
+                    "children": [
+                      {
+                        "type": "component",
+                        "name": "td",
+                        "properties": {
+                          "class": {
+                            "type": "value",
+                            "value": "left"
+                          }
+                        },
+                        "children": [
+                          {
+                            "type": "component",
+                            "name": "math",
+                            "properties": {
+                              "mode": {
+                                "type": "value",
+                                "value": "inline"
+                              },
+                              "code": {
+                                "type": "value",
+                                "value": "e"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "component",
+                        "name": "td",
+                        "children": [
+                          {
+                            "type": "textnode",
+                            "value": "2.718282…"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Some irrational numbers."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "raw",
+        "properties": {
+          "format": {
+            "type": "value",
+            "value": "html"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "<!--\nCaptions are distinguished from figure/table content using a preceding pipe (`|`) character.\nTo avoid confusion, table content and captions must be separated by an empty line.\n-->"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Basic images and tables can be included without adornment using standard Markdown.\nTo create numbered and captioned elements, place content within "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": ":::"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "-fenced "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "figure"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " or "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "table"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " blocks."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "goldenratio"
+          },
+          "class": {
+            "type": "value",
+            "value": "figure center"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "alt": {
+                "type": "value",
+                "value": "An illustration of the Golden Ratio"
+              },
+              "src": {
+                "type": "value",
+                "value": "https://upload.wikimedia.org/wikipedia/commons/4/44/Golden_ratio_line.svg"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "A depiction of the Golden Ratio ("
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "value",
+                    "value": "\\phi"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": ")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "citations"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Citations"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Give credit where credit is due!\nLiving Papers was inspired by earlier work by "
+          },
+          {
+            "type": "component",
+            "name": "citeref",
+            "properties": {
+              "key": {
+                "type": "value",
+                "value": "doi:10.1145/3242587.3242600"
+              },
+              "mode": {
+                "type": "value",
+                "value": "inline-author"
+              },
+              "index": {
+                "type": "value",
+                "value": 1
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": " on the "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://idyll-lang.org/docs"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Idyll language"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ".\nLiving Papers supports citations references with author name(s) or with reference number only "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "doi:10.1145/3242587.3242600"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 1
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ".\nCitations are also "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "interactive"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ": click/tap a citation to view a pop-up with more information."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Citation information can be automatically retrieved using a unique ID:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "ul",
+        "children": [
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "A DOI "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "[@doi:10.1145/3242587.3242600]"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "citelist",
+                "properties": {
+                  "class": {
+                    "type": "value",
+                    "value": "cite-list"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "["
+                  },
+                  {
+                    "type": "component",
+                    "name": "citeref",
+                    "properties": {
+                      "key": {
+                        "type": "value",
+                        "value": "doi:10.1145/3242587.3242600"
+                      },
+                      "index": {
+                        "type": "value",
+                        "value": 1
+                      }
+                    }
+                  },
+                  {
+                    "type": "textnode",
+                    "value": "]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "A Semantic Scholar ID "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "[@s2id:4fca64e6dc4e803d3ed904c04c6845a9e6adc53e]"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "citelist",
+                "properties": {
+                  "class": {
+                    "type": "value",
+                    "value": "cite-list"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "["
+                  },
+                  {
+                    "type": "component",
+                    "name": "citeref",
+                    "properties": {
+                      "key": {
+                        "type": "value",
+                        "value": "doi:10.1145/3242587.3242600"
+                      },
+                      "index": {
+                        "type": "value",
+                        "value": 1
+                      }
+                    }
+                  },
+                  {
+                    "type": "textnode",
+                    "value": "]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Citations can also be defined in "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://en.wikipedia.org/wiki/BibTeX"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "BibTeX"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " format, either in an external file (listed under the "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "references"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " key of the article metadata) or included anywhere in the document in a "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "bibliography"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " block:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "codeblock",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "smaller"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "~~~ bibliography\n@inproceedings{conlen2021,\n  title={Idyll Studio: A structured editor for authoring interactive \\& data-driven articles},\n  author={Conlen, Matthew and Vo, Megan and Tan, Alan and Heer, Jeffrey},\n  booktitle={The 34th Annual ACM Symposium on User Interface Software and Technology},\n  pages={1--12},\n  year={2021}\n}\n~~~"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "For example, "
+          },
+          {
+            "type": "component",
+            "name": "citeref",
+            "properties": {
+              "key": {
+                "type": "value",
+                "value": "conlen2021"
+              },
+              "mode": {
+                "type": "value",
+                "value": "inline-author"
+              },
+              "index": {
+                "type": "value",
+                "value": 2
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": " ("
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "@conlen2021"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ") extends Idyll with a graphical structured editor to create interactive articles without writing markup code."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "To create a list of citations "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "doi:10.1145/3242587.3242600"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 1
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": ", "
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "conlen2021"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 2
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", separate references with semi-colons: "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "[@doi:10.1145/3242587.3242600; @conlen2021]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "cross-references-and-notes"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Cross-References and Notes"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Cross-references use a syntax similar to citations:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "ul",
+        "children": [
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Figures: "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "@fig:teaser"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "crossref",
+                "properties": {
+                  "type": {
+                    "type": "value",
+                    "value": "fig"
+                  },
+                  "xref": {
+                    "type": "value",
+                    "value": "teaser"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": ", "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "@fig:goldenratio"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "crossref",
+                "properties": {
+                  "type": {
+                    "type": "value",
+                    "value": "fig"
+                  },
+                  "xref": {
+                    "type": "value",
+                    "value": "goldenratio"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Tables: "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "@tbl:irrational"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "crossref",
+                "properties": {
+                  "type": {
+                    "type": "value",
+                    "value": "tbl"
+                  },
+                  "xref": {
+                    "type": "value",
+                    "value": "irrational"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Equations: "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "@eqn:ratio"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "crossref",
+                "properties": {
+                  "type": {
+                    "type": "value",
+                    "value": "eqn"
+                  },
+                  "xref": {
+                    "type": "value",
+                    "value": "ratio"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "By default, a descriptive prefix like "
+          },
+          {
+            "type": "component",
+            "name": "quote",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Figure"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " is included."
+          },
+          {
+            "type": "component",
+            "name": "note",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "To show a reference number only, wrap the reference like so: "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "[-@fig:goldenratio]"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "crossref",
+                "properties": {
+                  "type": {
+                    "type": "value",
+                    "value": "fig"
+                  },
+                  "xref": {
+                    "type": "value",
+                    "value": "goldenratio"
+                  },
+                  "short": {
+                    "type": "value",
+                    "value": true
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "interactive-figures"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Interactive Figures"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "raw",
+        "properties": {
+          "format": {
+            "type": "value",
+            "value": "html"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "<!--\nJavaScript code blocks evaluate code in the Observable JavaScript dialect.\nUse the hide attribute to prevent output from being shown in the document.\nTo show JavaScript code (not evaluate it) use the { .code } class.\n-->"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "properties": {
+          "hide": {
+            "type": "value",
+            "value": "true"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "import { Scrubber } from \"@jheer/scrubber\""
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "class": {
+            "type": "value",
+            "value": "figure html:only"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "cell-view",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "viewof rot = Scrubber([0, 10], {\n  step: 0.05,\n  value: 5,\n  alternate: true,\n  label: 'Rotation',\n  format: x => x.toFixed(2)\n})"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "viewof sep = Scrubber([1, 100], {\n  value: 4,\n  alternate: true,\n  label: 'Separation'\n})"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "raw",
+            "properties": {
+              "format": {
+                "type": "value",
+                "value": "html"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "<!--\nWe can define multiple code cells using the --- delimiter.\nOnly output from the last cell is shown.\n-->"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "size = 25\n---\nn = Math.ceil((800 + 4*size) / sep)\n---\npad = 30\n---\ncolor = d3.scaleSequential(d3.interpolateRainbow).domain([360, 0])\n---\nsvg`<svg width=\"${800}\" height=\"${2*size+pad}\" viewBox=\"0 0 800 ${2*size+pad}\">\n  ${d3.range(0, n).map(i => {\n    const a = (i * rot) % 360;\n    return svg`<rect\n      transform=\"translate(${i*sep-2*size-1}, ${pad/2}) rotate(${-a}, ${size}, ${size})\"\n      width=\"${2*size}\" height=\"${2*size}\"\n      fill=\"none\" stroke=\"${color(a)}\"></rect>`;\n  })}\n  </svg>`"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "An interactive, explorable version of "
+              },
+              {
+                "type": "component",
+                "name": "crossref",
+                "properties": {
+                  "type": {
+                    "type": "value",
+                    "value": "fig"
+                  },
+                  "xref": {
+                    "type": "value",
+                    "value": "teaser"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": ". Can you deconstruct the shapes?"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "properties": {
+          "hide": {
+            "type": "value",
+            "value": "true"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "value = -10\n---\nmax = 10\n---\nstep = 0.1\n---\nsinc = x => x === 0 ? 1 : (Math.sin(Math.PI * x) / (Math.PI * x))\n---\nformat = x => x.toFixed(2).replace('-0.00', '0.00')"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "graph"
+          },
+          "class": {
+            "type": "value",
+            "value": "figure margin"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "cell-view",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Plot.plot({\n  y: { grid: true },\n  marks: [\n    Plot.ruleX([value], { stroke: '#888' }),\n    Plot.line(\n      d3.range(-max, Math.max(max + step, value), step),\n      { x: x => x, y: x => sinc(x), stroke: 'steelblue', strokeWidth: 2 }\n    ),\n    Plot.dot([value], { x: x => x, y: x => sinc(x), fill: 'steelblue' })\n  ],\n  width: 400,\n  height: 250\n})"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "bind": {
+                "type": "value",
+                "value": "value"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Scrubber([-max, max], {\n  step, labelWidth: '20px', loop: false,\n  label: tex`x`, format: x => x.toFixed(1)\n  })"
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "value",
+                    "value": "sinc(x)"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": " at "
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "value",
+                    "value": "x="
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": " "
+              },
+              {
+                "type": "component",
+                "name": "range-text",
+                "properties": {
+                  "min": {
+                    "type": "expression",
+                    "value": "-max"
+                  },
+                  "max": {
+                    "type": "expression",
+                    "value": "max"
+                  },
+                  "step": {
+                    "type": "expression",
+                    "value": "step"
+                  },
+                  "title": {
+                    "type": "value",
+                    "value": "Drag to adjust value"
+                  },
+                  "bind": {
+                    "type": "value",
+                    "value": "value"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": " → "
+              },
+              {
+                "type": "component",
+                "name": "math",
+                "properties": {
+                  "mode": {
+                    "type": "value",
+                    "value": "inline"
+                  },
+                  "code": {
+                    "type": "expression",
+                    "value": "`\\sinc(x) = ${format(sinc(value))}`"
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "raw",
+        "properties": {
+          "format": {
+            "type": "value",
+            "value": "html"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "<!--\nAbove we use the built-in `range-text` component for a draggable number.\nCustom web components are specified using the syntax:\n [:component-name:]{attribute1=value1 attribute2=value2}\n\nUnder the hood, TeX math elements are also components that support dynamic\nupdates with embedded JavaScript! If we denote inline math using double\ndollar signs ($$), we can then use single dollar signs (${js_code}) for\nJavaScript template string interpolation.\n\nWe use a `bind` attribute on both the draggable text and code-generated\ninput elements to _bind_ each of these inputs to a shared value.\nThe `bind` functionality requires that inputs conform to a simple interface:\nthe element must fire `input` events upon changes, and expose a `value`\nproperty that can be used to get/set the element's current value.\n-->"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Living Papers support "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "interactive"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " content using JavaScript code blocks and an extensible component system, all connected via a shared reactive runtime.\nThe runtime automatically re-evaluates page content in response to interactive updates."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Living Papers uses the same JavaScript dialect as "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://observablehq.com/@observablehq/a-taste-of-observable"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Observable notebooks"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ".\nWe can define variables, add input widgets, and generate figures (e.g., using "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://observablehq.com/@observablehq/vega-lite"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Vega-Lite"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " or "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://observablehq.com/@observablehq/plot"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Observable Plot"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", as in "
+          },
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "graph"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": ") just as we would in a notebook.\nWe can also directly import content from public Observable notebooks, like this "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://d3js.org/"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "D3"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "-based "
+          },
+          {
+            "type": "component",
+            "name": "link",
+            "properties": {
+              "href": {
+                "type": "value",
+                "value": "https://observablehq.com/@d3/multi-line-chart"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "line chart of unemployment rates by U.S. county"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ":"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "chartWidth = 775\n---\nimport { chart as d3LineChart } with { chartWidth as width }\nfrom '@d3/multi-line-chart'\n---\nd3LineChart"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "and-more"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "And more…"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Living Papers also supports other types of content (not demonstrated here) through custom plugins.\nOne or more plugins can be specified under the "
+          },
+          {
+            "type": "component",
+            "name": "code",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "plugins"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " article metadata key.\nFor example:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "ul",
+        "children": [
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "The "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "knitr"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " plugin evaluates R code blocks ("
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "```r"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ") at compile time and includes the results in the output document (similar to "
+              },
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://rmarkdown.rstudio.com/"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "RMarkdown"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ")."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "The "
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "pyodide"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " plugin evaluates Python code blocks ("
+              },
+              {
+                "type": "component",
+                "name": "code",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "```py"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ") "
+              },
+              {
+                "type": "component",
+                "name": "em",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "in the browser"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " using "
+              },
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://pyodide.org/en/stable/"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Pyodide"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ". These Python blocks follow the same reactive logic as Observable JavaScript, and computed Python results are directly accessible from JavaScript."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "references",
+        "children": [
+          {
+            "type": "component",
+            "name": "ol",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "references"
+              }
+            },
+            "children": [
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-0"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Conlen, M., & Heer, J. (2018, October 11). Idyll. Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology. UIST ’18: The 31st Annual ACM Symposium on User Interface Software and Technology. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.1145/3242587.3242600"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.1145/3242587.3242600"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-1"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Conlen, M., Vo, M., Tan, A., & Heer, J. (2021). Idyll Studio: A structured editor for authoring interactive & data-driven articles. The 34th Annual ACM Symposium on User Interface Software and Technology, 1–12."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "data": {
+    "citations": {
+      "bibtex": [
+        "@inproceedings{doi:10.1145/3242587.3242600,\n\tauthor = {Conlen, Matthew and Heer, Jeffrey},\n\tbooktitle = {Proceedings of the 31st {Annual} {ACM} {Symposium} on {User} {Interface} {Software} and {Technology}},\n\tyear = {2018},\n\tmonth = {oct 11},\n\torganization = {ACM},\n\ttitle = {Idyll},\n}",
+        "@inproceedings{conlen2021,\n\tauthor = {Conlen, Matthew and Vo, Megan and Tan, Alan and Heer, Jeffrey},\n\tbooktitle = {The 34th {Annual} {ACM} {Symposium} on {User} {Interface} {Software} and {Technology}},\n\tyear = {2021},\n\tpages = {1--12},\n\ttitle = {Idyll {Studio}: A structured editor for authoring interactive & data-driven articles},\n}"
+      ],
+      "csl": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2023,
+                3,
+                23
+              ]
+            ],
+            "date-time": "2023-03-23T23:51:34Z",
+            "timestamp": 1679615494987
+          },
+          "publisher-location": "New York, NY, USA",
+          "reference-count": 46,
+          "publisher": "ACM",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2018,
+                    10,
+                    11
+                  ]
+                ],
+                "date-time": "2018-10-11T00:00:00Z",
+                "timestamp": 1539216000000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://www.acm.org/publications/policies/copyright_policy#Background"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2018,
+                10,
+                11
+              ]
+            ]
+          },
+          "DOI": "10.1145/3242587.3242600",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2018,
+                10,
+                16
+              ]
+            ],
+            "date-time": "2018-10-16T13:30:26Z",
+            "timestamp": 1539696626000
+          },
+          "update-policy": "http://dx.doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 30,
+          "title": "Idyll",
+          "prefix": "10.1145",
+          "author": [
+            {
+              "given": "Matthew",
+              "family": "Conlen",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "University of Washington, Seattle, WA, USA"
+                }
+              ]
+            },
+            {
+              "given": "Jeffrey",
+              "family": "Heer",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Washington, Seattle, WA, USA"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2018,
+                10,
+                11
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_3_2_2_1_1",
+              "volume-title": "Retrieved",
+              "year": "2008",
+              "unstructured": "2008. Jekyll. ( 2008 ). Retrieved August 1, 2017 from https://jekyllrb.com/ 2008. Jekyll. (2008). Retrieved August 1, 2017 from https://jekyllrb.com/"
+            },
+            {
+              "key": "e_1_3_2_2_2_1",
+              "volume-title": "Retrieved",
+              "year": "2013",
+              "unstructured": "2013. Fangle. ( 2013 ). Retrieved September 19, 2017 from https://github.com/jotux/fangle 2013. Fangle. (2013). Retrieved September 19, 2017 from https://github.com/jotux/fangle"
+            },
+            {
+              "key": "e_1_3_2_2_3_1",
+              "volume-title": "Retrieved",
+              "year": "2015",
+              "unstructured": "2015. React. ( 2015 ). Retrieved August 1, 2017 from https://facebook.github.io/react/ 2015. React. (2015). Retrieved August 1, 2017 from https://facebook.github.io/react/"
+            },
+            {
+              "key": "e_1_3_2_2_4_1",
+              "volume-title": "Explorable Explanations Web Catalog. (2017). Retrieved",
+              "year": "2017",
+              "unstructured": "2017. Explorable Explanations Web Catalog. (2017). Retrieved August 1, 2017 from http://explorabl.es/ 2017. Explorable Explanations Web Catalog. (2017). Retrieved August 1, 2017 from http://explorabl.es/"
+            },
+            {
+              "key": "e_1_3_2_2_5_1",
+              "volume-title": "Idyll download count. (2017). Retrieved",
+              "year": "2017",
+              "unstructured": "2017. Idyll download count. (2017). Retrieved August 1, 2017 from https://npm-stat.com/charts.html?package=idyll 2017. Idyll download count. (2017). Retrieved August 1, 2017 from https://npm-stat.com/charts.html?package=idyll"
+            },
+            {
+              "key": "e_1_3_2_2_6_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3025453.3025631"
+            },
+            {
+              "key": "e_1_3_2_2_7_1",
+              "unstructured": "Bill Atkinson. 1988. Hypercard. Apple Computer.  Bill Atkinson. 1988. Hypercard. Apple Computer."
+            },
+            {
+              "key": "e_1_3_2_2_8_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2501654.2501666"
+            },
+            {
+              "key": "e_1_3_2_2_9_1",
+              "volume-title": "Retrieved",
+              "author": "Bollweg Nicholas",
+              "year": "2011",
+              "unstructured": "Nicholas Bollweg . 2011 . TangleDown. (2011) . Retrieved September 19, 2017 from https://github.com/bollwyvl/TangleDown Nicholas Bollweg. 2011. TangleDown. (2011). Retrieved September 19, 2017 from https://github.com/bollwyvl/TangleDown"
+            },
+            {
+              "key": "e_1_3_2_2_10_1",
+              "volume-title": "D3: Data-Driven Documents",
+              "author": "Bostock Michael",
+              "year": "2011",
+              "unstructured": "Michael Bostock , Vadim Ogievetsky , and Jeffrey Heer . 2011. D3: Data-Driven Documents . IEEE Trans. Visualization & Comp. Graphics (Proc. InfoVis) ( 2011 ). http://vis.stanford.edu/papers/d3 Michael Bostock, Vadim Ogievetsky, and Jeffrey Heer. 2011. D3: Data-Driven Documents. IEEE Trans. Visualization & Comp. Graphics (Proc. InfoVis) (2011). http://vis.stanford.edu/papers/d3"
+            },
+            {
+              "key": "e_1_3_2_2_11_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TVCG.2016.2614803"
+            },
+            {
+              "key": "e_1_3_2_2_12_1",
+              "unstructured": "Bill Burdick. 2011. leisure. https://github.com/zot/Leisure. (2011).  Bill Burdick. 2011. leisure. https://github.com/zot/Leisure. (2011)."
+            },
+            {
+              "key": "e_1_3_2_2_13_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jvlc.2016.07.004"
+            },
+            {
+              "key": "e_1_3_2_2_14_1",
+              "volume-title": "Retrieved",
+              "year": "2017",
+              "unstructured": "Distill. 2017 . Latest articles about machine learning. (2017) . Retrieved September 19, 2017 from https://distill.pub/ Distill. 2017. Latest articles about machine learning. (2017). Retrieved September 19, 2017 from https://distill.pub/"
+            },
+            {
+              "key": "e_1_3_2_2_15_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/258948.258973"
+            },
+            {
+              "key": "e_1_3_2_2_16_1",
+              "volume-title": "Retrieved",
+              "author": "Gruber John",
+              "year": "2004",
+              "unstructured": "John Gruber . 2004. Markdown. ( 2004 ). Retrieved August 1, 2017 from https://daringfireball.net/projects/markdown/syntax/ John Gruber. 2004. Markdown. (2004). Retrieved August 1, 2017 from https://daringfireball.net/projects/markdown/syntax/"
+            },
+            {
+              "key": "e_1_3_2_2_17_1",
+              "volume-title": "Retrieved",
+              "author": "Kapoor Amit",
+              "year": "2016",
+              "unstructured": "Amit Kapoor . 2016. Visdown. ( 2016 ). Retrieved August 1, 2017 from http://visdown.amitkaps.com/ Amit Kapoor. 2016. Visdown. (2016). Retrieved August 1, 2017 from http://visdown.amitkaps.com/"
+            },
+            {
+              "key": "e_1_3_2_2_18_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2702123.2702140"
+            },
+            {
+              "key": "e_1_3_2_2_19_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MC.2013.36"
+            },
+            {
+              "key": "e_1_3_2_2_20_1",
+              "unstructured": "Maarten Lambrechts. 2016. Rock 'n Poll: Polls explained with interactive graphics. https://web.archive.org/web/20180307013513/http://rocknpoll.graphics/. (2016).  Maarten Lambrechts. 2016. Rock 'n Poll: Polls explained with interactive graphics. https://web.archive.org/web/20180307013513/http://rocknpoll.graphics/. (2016)."
+            },
+            {
+              "key": "e_1_3_2_2_21_1",
+              "volume-title": "Petra Isenberg, and Sheelagh Carpendale.",
+              "author": "Lee Bongshin",
+              "year": "2015",
+              "unstructured": "Bongshin Lee , Nathalie Henry Riche , Petra Isenberg, and Sheelagh Carpendale. 2015 . More than telling a story: Transforming data into visually shared stories. IEEE computer graphics and applications 35, 5 (2015), 84--90. Bongshin Lee, Nathalie Henry Riche, Petra Isenberg, and Sheelagh Carpendale. 2015. More than telling a story: Transforming data into visually shared stories. IEEE computer graphics and applications 35, 5 (2015), 84--90."
+            },
+            {
+              "key": "e_1_3_2_2_22_1",
+              "volume-title": "Cascading style sheets: designing for the Web",
+              "author": "Lie Hakon Wium",
+              "unstructured": "Hakon Wium Lie and Bert Bos . 2005. Cascading style sheets: designing for the Web . Addison-Wesley Professional . Hakon Wium Lie and Bert Bos. 2005. Cascading style sheets: designing for the Web. Addison-Wesley Professional."
+            },
+            {
+              "key": "e_1_3_2_2_23_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MCG.2012.24"
+            },
+            {
+              "key": "e_1_3_2_2_24_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/cgf.13195"
+            },
+            {
+              "key": "e_1_3_2_2_25_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1639949.1640091"
+            },
+            {
+              "key": "e_1_3_2_2_26_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/344949.344959"
+            },
+            {
+              "key": "e_1_3_2_2_27_1",
+              "unstructured": "Observable 2018. Observable. https://observablehq.com/. (2018).  Observable 2018. Observable. https://observablehq.com/. (2018)."
+            },
+            {
+              "key": "e_1_3_2_2_28_1",
+              "volume-title": "Research Debt. Distill",
+              "author": "Olah Chris",
+              "year": "2017",
+              "unstructured": "Chris Olah and Shan Carter . 2017. Research Debt. Distill ( 2017 ). Retrieved August 1, 2017 from http://distill.pub/2017/research-debt Chris Olah and Shan Carter. 2017. Research Debt. Distill (2017). Retrieved August 1, 2017 from http://distill.pub/2017/research-debt"
+            },
+            {
+              "key": "e_1_3_2_2_29_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MCSE.2007.53"
+            },
+            {
+              "key": "e_1_3_2_2_30_1",
+              "unstructured": "Polymer Project 2017. Polymer Project. https://www.polymer-project.org/. (2017).  Polymer Project 2017. Polymer Project. https://www.polymer-project.org/. (2017)."
+            },
+            {
+              "key": "e_1_3_2_2_31_1",
+              "unstructured": "National Public Radio. 2016. dailygraphics. https://github.com/nprapps/dailygraphics. (2016).  National Public Radio. 2016. dailygraphics. https://github.com/nprapps/dailygraphics. (2016)."
+            },
+            {
+              "key": "e_1_3_2_2_32_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3126594.3126642"
+            },
+            {
+              "key": "e_1_3_2_2_33_1",
+              "first-page": "3",
+              "article-title": "Authoring Narrative Visualizations with",
+              "volume": "33",
+              "author": "Satyanarayan Arvind",
+              "year": "2014",
+              "unstructured": "Arvind Satyanarayan and Jeffrey Heer . 2014 . Authoring Narrative Visualizations with Ellipsis. Comput. Graph. Forum 33 , 3 (June 2014), 361--370. Arvind Satyanarayan and Jeffrey Heer. 2014. Authoring Narrative Visualizations with Ellipsis. Comput. Graph. Forum 33, 3 (June 2014), 361--370.",
+              "journal-title": "Ellipsis. Comput. Graph. Forum"
+            },
+            {
+              "key": "e_1_3_2_2_34_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TVCG.2016.2599030"
+            },
+            {
+              "key": "e_1_3_2_2_35_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2642918.2647360"
+            },
+            {
+              "key": "e_1_3_2_2_36_1",
+              "unstructured": "Toby Schachman and Joshua Horowitz. 2016. Apparatus. https://github.com/cdglabs. (2016).  Toby Schachman and Joshua Horowitz. 2016. Apparatus. https://github.com/cdglabs. (2016)."
+            },
+            {
+              "key": "e_1_3_2_2_37_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TVCG.2010.179"
+            },
+            {
+              "key": "e_1_3_2_2_38_1",
+              "volume-title": "Emerging and recurring data-driven storytelling techniques: Analysis of a curated collection of recent stories",
+              "author": "Stolper Charles D",
+              "year": "2016",
+              "unstructured": "Charles D Stolper , Bongshin Lee , N Henry Riche , and John Stasko . 2016. Emerging and recurring data-driven storytelling techniques: Analysis of a curated collection of recent stories . Microsoft Research , Washington, USA ( 2016 ). Charles D Stolper, Bongshin Lee, N Henry Riche, and John Stasko. 2016. Emerging and recurring data-driven storytelling techniques: Analysis of a curated collection of recent stories. Microsoft Research, Washington, USA (2016)."
+            },
+            {
+              "key": "e_1_3_2_2_39_1",
+              "volume-title": "Archie Markup Language (ArchieML). (2015). Retrieved",
+              "author": "Strickland Michael",
+              "year": "2017",
+              "unstructured": "Michael Strickland , Archie Tse , Matthew Ericson , and Tom Giratikanon . 2015. Archie Markup Language (ArchieML). (2015). Retrieved August 1, 2017 from http://archieml.org/ Michael Strickland, Archie Tse, Matthew Ericson, and Tom Giratikanon. 2015. Archie Markup Language (ArchieML). (2015). Retrieved August 1, 2017 from http://archieml.org/"
+            },
+            {
+              "key": "e_1_3_2_2_40_1",
+              "unstructured": "Tampa Bay Times. 2016. lede. https://github.com/tbtimes/lede. (2016).  Tampa Bay Times. 2016. lede. https://github.com/tbtimes/lede. (2016)."
+            },
+            {
+              "key": "e_1_3_2_2_41_1",
+              "unstructured": "The New York Times. 2017. kyt. https://github.com/NYTimes/kyt. (2017).  The New York Times. 2017. kyt. https://github.com/NYTimes/kyt. (2017)."
+            },
+            {
+              "key": "e_1_3_2_2_42_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2984511.2984551"
+            },
+            {
+              "key": "e_1_3_2_2_43_1",
+              "volume-title": "Magic Ink: Information Software and the Graphical Interface. Retrieved",
+              "author": "Victor Bret",
+              "year": "2006",
+              "unstructured": "Bret Victor . 2006 . Magic Ink: Information Software and the Graphical Interface. Retrieved August 1, 2017 from http://worrydream.com/MagicInk/ Bret Victor. 2006. Magic Ink: Information Software and the Graphical Interface. Retrieved August 1, 2017 from http://worrydream.com/MagicInk/"
+            },
+            {
+              "key": "e_1_3_2_2_44_1",
+              "unstructured": "Bret Victor. 2011a. Explorable Explorations. Retrieved August 1 2017 from http://worrydream.com/ExplorableExplanations/  Bret Victor. 2011a. Explorable Explorations. Retrieved August 1 2017 from http://worrydream.com/ExplorableExplanations/"
+            },
+            {
+              "key": "e_1_3_2_2_45_1",
+              "unstructured": "Bret Victor. 2011b. Scientific Communication As Sequential Art. http://worrydream.com/ScientificCommunicationAsSequentialArt/.  Bret Victor. 2011b. Scientific Communication As Sequential Art. http://worrydream.com/ScientificCommunicationAsSequentialArt/."
+            },
+            {
+              "key": "e_1_3_2_2_46_1",
+              "volume-title": "Tangle: a JavaScript library for reactive documents. Retrieved",
+              "author": "Victor Bret",
+              "year": "2017",
+              "unstructured": "Bret Victor . 2011c. Tangle: a JavaScript library for reactive documents. Retrieved August 1, 2017 from http://worrydream.com/Tangle/ Bret Victor. 2011c. Tangle: a JavaScript library for reactive documents. Retrieved August 1, 2017 from http://worrydream.com/Tangle/"
+            }
+          ],
+          "event": "UIST '18: The 31st Annual ACM Symposium on User Interface Software and Technology",
+          "container-title": "Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology",
+          "original-title": [],
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3242587.3242600",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2023,
+                1,
+                6
+              ]
+            ],
+            "date-time": "2023-01-06T16:09:14Z",
+            "timestamp": 1673021354000
+          },
+          "score": 1,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/3242587.3242600"
+            }
+          },
+          "subtitle": [
+            "A Markup Language for Authoring and Publishing Interactive Articles on the Web"
+          ],
+          "short-title": [],
+          "issued": {
+            "date-parts": [
+              [
+                2018,
+                10,
+                11
+              ]
+            ]
+          },
+          "references-count": 46,
+          "alternative-id": [
+            "10.1145/3242587.3242600",
+            "10.1145/3242587"
+          ],
+          "URL": "http://dx.doi.org/10.1145/3242587.3242600",
+          "relation": {},
+          "published": {
+            "date-parts": [
+              [
+                2018,
+                10,
+                11
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2018-10-11",
+              "order": 2,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ],
+          "id": "doi:10.1145/3242587.3242600",
+          "S2ID": "4fca64e6dc4e803d3ed904c04c6845a9e6adc53e"
+        },
+        {
+          "author": [
+            {
+              "given": "Matthew",
+              "family": "Conlen"
+            },
+            {
+              "given": "Megan",
+              "family": "Vo"
+            },
+            {
+              "given": "Alan",
+              "family": "Tan"
+            },
+            {
+              "given": "Jeffrey",
+              "family": "Heer"
+            }
+          ],
+          "container-title": "The 34th Annual ACM Symposium on User Interface Software and Technology",
+          "type": "paper-conference",
+          "id": "conlen2021",
+          "citation-key": "conlen2021",
+          "issued": {
+            "date-parts": [
+              [
+                2021
+              ]
+            ]
+          },
+          "page": "1-12",
+          "title": "Idyll Studio: A structured editor for authoring interactive & data-driven articles"
+        }
+      ],
+      "data": [
+        {
+          "id": "doi:10.1145/3242587.3242600",
+          "doi": "10.1145/3242587.3242600",
+          "s2id": "4fca64e6dc4e803d3ed904c04c6845a9e6adc53e",
+          "year": 2018,
+          "author": [
+            {
+              "given": "Matthew",
+              "family": "Conlen",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "University of Washington, Seattle, WA, USA"
+                }
+              ]
+            },
+            {
+              "given": "Jeffrey",
+              "family": "Heer",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Washington, Seattle, WA, USA"
+                }
+              ]
+            }
+          ],
+          "title": "Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web",
+          "venue": "Proceedings of the 31st Annual ACM Symposium on User Interface Software and Technology",
+          "url": "https://www.semanticscholar.org/paper/4fca64e6dc4e803d3ed904c04c6845a9e6adc53e",
+          "abstract": "The web has matured as a publishing platform: news outlets regularly publish rich, interactive stories while technical writers use animation and interaction to communicate complex ideas. This style of interactive media has the potential to engage a large audience and more clearly explain concepts, but is expensive and time consuming to produce. Drawing on industry experience and interviews with domain experts, we contribute design tools to make it easier to author and publish interactive articles. We introduce Idyll, a novel \"compile-to-the-web\" language for web-based interactive narratives. Idyll implements a flexible article model, allowing authors control over document style and layout, reader-driven events (such as button clicks and scroll triggers), and a structured interface to JavaScript components. Through both examples and first-use results from undergraduate computer science students, we show how Idyll reduces the amount of effort and custom code required to create interactive articles.",
+          "tldr": "This work introduces Idyll, a novel \"compile-to-the-web\" language for web-based interactive narratives, and shows how Idyll reduces the amount of effort and custom code required to create interactive articles."
+        },
+        {
+          "id": "conlen2021",
+          "year": 2021,
+          "author": [
+            {
+              "given": "Matthew",
+              "family": "Conlen"
+            },
+            {
+              "given": "Megan",
+              "family": "Vo"
+            },
+            {
+              "given": "Alan",
+              "family": "Tan"
+            },
+            {
+              "given": "Jeffrey",
+              "family": "Heer"
+            }
+          ],
+          "title": "Idyll Studio: A structured editor for authoring interactive & data-driven articles",
+          "venue": "The 34th Annual ACM Symposium on User Interface Software and Technology"
+        }
+      ]
+    }
+  }
+}

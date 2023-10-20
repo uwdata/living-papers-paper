@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "@living-papers/example-zoomable",
+  "scripts": {
+    "assets": "mkdirp build && cp -r assets build",
+    "clean": "rimraf .cache .temp build",
+    "prebuild": "npm run assets",
+    "build": "lpub -o build --tempDir='.temp' index.md",
+    "prewatch": "npm run assets",
+    "watch": "lpub -o build --tempDir='.temp' --watch index.md",
+    "predeploy": "npm run build"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "^0.1.2",
+    "mkdirp": "^2.1.6",
+    "rimraf": "^4.4.1"
+  }
+}

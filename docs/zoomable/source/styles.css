@@ -1,0 +1,51 @@
+img {
+  max-width: 100%
+}
+
+.toolname {
+  /* TODO: LaTeX support */
+  font-family: "Linux Biolinum O", sans-serif;
+  font-variant: small-caps;
+}
+
+.tk {
+  border-radius: 3px;
+  background: rgb(255, 255, 166);
+  border: 1px dashed grey;
+  font-size: 80%;
+  color: rgba(0,0,0,60%);
+  padding: 4px;
+}
+div.tk {
+  padding: 4px 12px;
+
+}
+.tk.high {
+  background: rgb(255, 200, 166);
+}
+
+.note-to-reader {
+  border-radius: 3px;
+  background: rgb(255, 255, 166);
+  border: 1px dashed grey;
+  font-size: 80%;
+  color: rgba(0,0,0,60%);
+  padding: 4px 12px;
+}
+
+.row {
+  display: flex;
+}
+
+.table-three-forms table {
+  border-top: none;
+  border-bottom: none;
+  border-collapse: separate;
+  border-spacing: 1em;
+}
+.table-three-forms tr {
+  border-bottom: none;
+}
+.table-three-forms-wrapper {
+  margin: -1em;
+}

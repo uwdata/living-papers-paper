@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "description": "Fast KDE Living Papers example article.",
+  "scripts": {
+    "figures": "mkdirp build && cp -r figures build",
+    "clean": "rimraf .cache .temp build",
+    "prebuild": "npm run figures",
+    "build": "lpub -o build --tempDir='.temp' index.md",
+    "prewatch": "npm run figures",
+    "watch": "lpub -o build --tempDir='.temp' --watch index.md"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "*",
+    "@living-papers/components": "*",
+    "mkdirp": "^1.0.4"
+  }
+}

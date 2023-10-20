@@ -1,0 +1,3146 @@
+{
+  "metadata": {
+    "author": [
+      {
+        "author-link": "http://dragice.fr/",
+        "email": "none",
+        "name": "Pierre Dragicevic",
+        "org": "Inria",
+        "org-link": "http://www.inria.fr/"
+      },
+      {
+        "author-link": "http://yvonnejansen.me/",
+        "email": "none",
+        "name": "Yvonne Jansen",
+        "org": "CNRS & Sorbonne Université",
+        "org-link": "http://www.sorbonne-universite.fr/"
+      }
+    ],
+    "keywords": [
+      "Physical visualization",
+      "Multiverse analysis"
+    ],
+    "output": {
+      "api": true,
+      "ast": {
+        "space": "2"
+      },
+      "html": true,
+      "latex": {
+        "template": "acm-article"
+      }
+    },
+    "section-numbers": false,
+    "title": "Re-Evaluating the Efficiency of Physical Visualizations: A Simple Multiverse Analysis"
+  },
+  "article": {
+    "type": "component",
+    "name": "article",
+    "children": [
+      {
+        "type": "component",
+        "name": "aside",
+        "children": [
+          {
+            "type": "component",
+            "name": "p",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Replica of the "
+              },
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://explorablemultiverse.github.io/examples/frequentist/"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Frequentist example"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " in the Explorable Multiverse Analyses paper."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "p",
+            "children": [
+              {
+                "type": "component",
+                "name": "link",
+                "properties": {
+                  "href": {
+                    "type": "value",
+                    "value": "https://github.com/explorablemultiverse/explorablemultiverse.github.io/blob/master/examples/frequentist/index.html"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Original source"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "abstract",
+        "children": [
+          {
+            "type": "component",
+            "name": "p",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "A previous study has shown that moving 3D data visualizations to the physical world can improve users’ efficiency at information retrieval tasks. Here, we re-analyze a subset of the experimental data using a multiverse analysis approach. Results from this multiverse analysis are presented as explorable explanations, and can be interactively explored in this paper. The study’s findings appear to be robust to choices in statistical analysis."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "introduction"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Introduction"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Whereas traditional visualizations map data to pixels or ink, physical visualizations (or "
+          },
+          {
+            "type": "component",
+            "name": "quote",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "data physicalizations"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ") map data to physical form. While physical visualizations are compelling as an art form, it is unclear whether they can help users carry out actual information visualization tasks."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Five years ago, a study was published comparing physical to on-screen visualizations in their ability to support basic information retrieval tasks "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Jansen2013"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 5
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ". Interactive 2D representations were clearly the fastest, but a gain in speed was observed when transitioning from on-screen to physical 3D representations. Overall, the study suggested that features unique to physical objects – such as their ability to be directly touched – can facilitate information retrieval."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "These results however only hold for the particular data analysis that was conducted. A group of statisticians and methodologists recently argued that results from a single analysis can be unreliable "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Steegen2016"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 9
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ". They recommended researchers to conduct instead "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "multiverse analyses"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", i.e., to perform all reasonable analyses of their data and report a summary of their outcomes. While Steegen et al. show how to summarize all outcomes using p-values, here we use an interactive approach based on Bret Victor’s concept of "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "explorable explanation"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Victor2011"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 10
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "bar-charts"
+          },
+          "class": {
+            "type": "value",
+            "value": "figure center"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "src": {
+                "type": "value",
+                "value": "assets/bar-charts.jpg"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "3D bar chart, on-screen and physical."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "experiment"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Experiment"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "The study consisted of two experiments. In the first experiment, participants were presented with 3D bar charts showing country indicator data, and were asked simple questions about the data. The 3D bar charts were presented both on a screen and in physical form (see "
+          },
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "bar-charts"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": "). The on-screen bar chart could be rotated in all directions with the mouse. Both a regular and a stereoscopic display were tested. An interactive 2D bar chart was also used as a control condition. Accuracy was high across all conditions, but average completion time was lower with physical 3D bar charts than with on-screen 3D bar charts."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Here we only re-analyze the second experiment, whose goal was to better understand why physical visualizations appear to be superior. The experiment involved an "
+          },
+          {
+            "type": "component",
+            "name": "quote",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "enhanced"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " version of the on-screen 3D chart and an "
+          },
+          {
+            "type": "component",
+            "name": "quote",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "impoverished"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " version of the physical 3D chart. The enhanced on-screen chart was rotated using a 3D-tracked tangible prop instead of a mouse. The impoverished physical chart consisted of the same physical object but participants were instructed not to use their fingers for marking. There were 4 conditions:"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "ul",
+        "children": [
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "component",
+                "name": "em",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "physical touch"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ": physical 3D bar charts where touch was explicitly encouraged in the instructions."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "component",
+                "name": "em",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "physical no touch"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ": same charts as above except subjects were told not to use their fingers to mark points of interest (labels and bars)."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "component",
+                "name": "em",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "virtual prop"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ": on-screen 3D bar charts with a tangible prop for controlling 3D rotation."
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "li",
+            "children": [
+              {
+                "type": "component",
+                "name": "em",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "virtual mouse"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": ": same charts as above, but 3D rotation was mouse-controlled."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "These manipulations were meant to answer three questions: "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "1)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " how important is direct touch in the physical condition? "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "2)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " how important is rotation by direct manipulation? "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "3)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " how important is visual realism? Visual realism referred to the higher perceptual richness of physical objects compared to on-screen objects, especially concerning depth cues. Figure 2 summarizes the three effects of interest."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "comparisons"
+          },
+          "class": {
+            "type": "value",
+            "value": "figure center"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "src": {
+                "type": "value",
+                "value": "assets/comparisons.png"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Effects of interest."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Sixteen participants were recruited, all of whom saw the four conditions in counterbalanced order. For more details about the experiment, please refer to "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Jansen2013"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 5
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "results"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Results"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Like the original paper we use an estimation approach, meaning that we report and interpret all results based on (unstandardized) effect sizes and their interval estimates "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Dragicevic2016"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 4
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ". We explain how to translate the results into statistical significance language to provide a point of reference, but we warn the reader against the pitfalls of dichotomous interpretations "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Amrhein2017"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 1
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "cell-view",
+        "properties": {
+          "hide": {
+            "type": "value",
+            "value": "true"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "// Copied from https://github.com/explorablemultiverse/explorablemultiverse.github.io/blob/master/examples/commons/scripts/TangleKit/TangleKit.js#L415-L433\n// Pretty-formats probabilities. Works for p-values, alpha values, etc.\nfunction formatProb(value) {\n  if (value <= 0.5) {\n    // Convert the number into a string with two significant digits\n    value = Number.parseFloat(value).toPrecision(2);\n    // Remove the trailing zeros, which look weird for standard alpha values like .05\n    value = Number.parseFloat(value).toPrecision();\n    // Remove leading zero\n    value = (value+\"\").replace(/^0+/, '');\n  } else {\n    // Work with 1-p if p > 0.5. This retains a high precision for probabilities close to 1.\n    value = 1 - formatProb(1 - value);\n    // extra tweak to prevent strange javascript rounding errors\n    value = Math.round(value * 100000000) / 100000000;\n    // Remove leading zero\n    value = (value+\"\").replace(/^0+/, '');\n  }\n  return value;\n}\n---\nfunction formatPerc(value) {\n  value = formatProb(value / 100) * 100;\n  // extra tweak to prevent strange javascript rounding errors\n  value = Math.round(value * 100000000) / 100000000;\n  return value + \"%\";\n}\n---\nbootstrap =  true;\n---\nlog_transform = true;\n---\nbonferroni = true;\n---\nn_comparisons = 3;\n---\nconfidence_level = 50;\n---\nfile_suffix = `${Math.round(confidence_level * 10) / 1000}${bootstrap ? \"-bootstrapped\" : \"\"}${log_transform ? \"-log-transformed\" : \"\"}${bonferroni ? \"-bonferroni-adjusted\" : \"\"}.jpg`;\n---\nfigA = `assets/R/fig1-${file_suffix}`;\n---\nfigB = `assets/R/fig2-${file_suffix}`;\n---\nalpha_level = 1 - confidence_level / 100;\n---\nindividual_alpha_level = bonferroni ? alpha_level / n_comparisons : alpha_level;\n---\nindividual_confidence_level = bonferroni ? 100 * (1 - individual_alpha_level) : confidence_level;\n---\nfamilywise_error_rate = 1 - Math.pow((1-individual_alpha_level), n_comparisons);\n---\nsimultaneous_confidence_level = 100 * (1 - familywise_error_rate);"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "figA"
+          },
+          "class": {
+            "type": "value",
+            "value": "figure center"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "div",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "center"
+              }
+            },
+            "children": [
+              {
+                "type": "component",
+                "name": "p",
+                "children": [
+                  {
+                    "type": "component",
+                    "name": "image",
+                    "properties": {
+                      "src": {
+                        "type": "expression",
+                        "value": "figA"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "Average task completion time ("
+              },
+              {
+                "type": "component",
+                "name": "cell-view",
+                "properties": {
+                  "inline": {
+                    "type": "value",
+                    "value": true
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "log_transform ? 'arithmetic' : 'geometric'"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " mean) per condition. Error bars are "
+              },
+              {
+                "type": "component",
+                "name": "cell-view",
+                "properties": {
+                  "inline": {
+                    "type": "value",
+                    "value": true
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "formatPerc(confidence_level)"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " t-based CIs."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "We focus our analysis on task completion times, reported in "
+          },
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "figA"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": " and "
+          },
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "figB"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": ".\nDots indicate sample means, while error bars are\n"
+          },
+          {
+            "type": "component",
+            "name": "option-text",
+            "properties": {
+              "options": {
+                "type": "value",
+                "value": "[50,68,80,90,95,99,99.9]"
+              },
+              "suffix": {
+                "type": "value",
+                "value": "%"
+              },
+              "span": {
+                "type": "value",
+                "value": "5"
+              },
+              "bind": {
+                "type": "value",
+                "value": "confidence_level"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": "\nconfidence intervals computed on\n"
+          },
+          {
+            "type": "component",
+            "name": "toggle-text",
+            "properties": {
+              "bind": {
+                "type": "value",
+                "value": "log_transform"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "\n"
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "untransformed data"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "\n"
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "log-transformed data "
+                  },
+                  {
+                    "type": "component",
+                    "name": "citelist",
+                    "properties": {
+                      "class": {
+                        "type": "value",
+                        "value": "cite-list"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "["
+                      },
+                      {
+                        "type": "component",
+                        "name": "citeref",
+                        "properties": {
+                          "key": {
+                            "type": "value",
+                            "value": "Sauro2010"
+                          },
+                          "index": {
+                            "type": "value",
+                            "value": 8
+                          }
+                        }
+                      },
+                      {
+                        "type": "textnode",
+                        "value": "]"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " using the\n"
+          },
+          {
+            "type": "component",
+            "name": "toggle-text",
+            "properties": {
+              "bind": {
+                "type": "value",
+                "value": "bootstrap"
+              }
+            },
+            "children": [
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "BCa bootstrap"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " "
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "t-distribution"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " method."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Strictly speaking, all we can assert about each interval is that it comes from a procedure designed to capture the population mean "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "formatPerc(confidence_level)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " of the time across replications, under some assumptions "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Morey2016"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 7
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ".\nIn practice, if we assume we have very little prior knowledge about population means, each interval can be informally interpreted as a range of plausible values for the population mean, with the midpoint being "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "confidence_level === 95 ? 'about 7 times' : ''"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " more likely than the endpoints "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Cumming2012"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 3
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "figA"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": " shows the "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "log_transform ? 'mean' : '(geometric)'"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " completion time for each condition.\nAt first sight, "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "physical touch"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " appears to be faster than the other conditions.\nHowever, since condition is a within-subject factor, it is preferable to examine within-subject differences "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Cumming2012"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 3
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", shown in "
+          },
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "figB"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "figB"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": " shows the pairwise "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "log_transform ? 'differences' : 'ratios'"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " between mean completion times.\nA value lower than "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "log_transform ? 0 : 1"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " (i.e., on the left side of the dark line) means the condition on the left is faster than the condition on the right.\nThe confidence intervals are\n"
+          },
+          {
+            "type": "component",
+            "name": "toggle-text",
+            "properties": {
+              "bind": {
+                "type": "value",
+                "value": "bonferroni"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "\n"
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Bonferroni-corrected."
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "\n"
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "not corrected for multiplicity,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "\n"
+          },
+          {
+            "type": "component",
+            "name": "toggle-text",
+            "properties": {
+              "bind": {
+                "type": "value",
+                "value": "bonferroni"
+              },
+              "clickable": {
+                "type": "expression",
+                "value": "false"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "\n"
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Since the individual confidence level is "
+                  },
+                  {
+                    "type": "component",
+                    "name": "cell-view",
+                    "properties": {
+                      "inline": {
+                        "type": "value",
+                        "value": true
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "formatPerc(confidence_level)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "textnode",
+                    "value": ","
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": "\n"
+              },
+              {
+                "type": "component",
+                "name": "span",
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "meaning they are effectively "
+                  },
+                  {
+                    "type": "component",
+                    "name": "cell-view",
+                    "properties": {
+                      "inline": {
+                        "type": "value",
+                        "value": true
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "formatPerc(individual_confidence_level)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "textnode",
+                    "value": " CIs "
+                  },
+                  {
+                    "type": "component",
+                    "name": "citelist",
+                    "properties": {
+                      "class": {
+                        "type": "value",
+                        "value": "cite-list"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "["
+                      },
+                      {
+                        "type": "component",
+                        "name": "citeref",
+                        "properties": {
+                          "key": {
+                            "type": "value",
+                            "value": "Baguley2012"
+                          },
+                          "index": {
+                            "type": "value",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "type": "textnode",
+                        "value": "]"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "textnode",
+                    "value": ". Thus,"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "\nan interval that does not contain the value "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "log_transform ? 0 : 1"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " indicates a statistically significant difference at the α="
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "formatProb(individual_alpha_level)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " level.\nThe probability of getting at least one such interval if all "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "n_comparisons"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " population means were zero (i.e., the familywise error rate) is α="
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "formatProb(familywise_error_rate)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ".\nLikewise, the simultaneous confidence level is "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "formatPerc(simultaneous_confidence_level)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", meaning that if we replicate our experiment over and over, we should expect the "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "n_comparisons"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " confidence intervals to capture all "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "n_comparisons"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " population means "
+          },
+          {
+            "type": "component",
+            "name": "cell-view",
+            "properties": {
+              "inline": {
+                "type": "value",
+                "value": true
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "formatPerc(simultaneous_confidence_level)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " of the time."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "figure",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "figB"
+          },
+          "class": {
+            "type": "value",
+            "value": "figure center"
+          }
+        },
+        "children": [
+          {
+            "type": "component",
+            "name": "image",
+            "properties": {
+              "src": {
+                "type": "expression",
+                "value": "figB"
+              }
+            }
+          },
+          {
+            "type": "component",
+            "name": "caption",
+            "children": [
+              {
+                "type": "component",
+                "name": "toggle-text",
+                "properties": {
+                  "bind": {
+                    "type": "value",
+                    "value": "log_transform"
+                  },
+                  "clickable": {
+                    "type": "value",
+                    "value": "false"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "component",
+                    "name": "span",
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "Differences between mean completion times (arithmetic means)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "component",
+                    "name": "span",
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "Ratios between average task completion times (geometric means)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " between conditions. Error bars are "
+              },
+              {
+                "type": "component",
+                "name": "cell-view",
+                "properties": {
+                  "inline": {
+                    "type": "value",
+                    "value": true
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "bonferroni ? 'Bonferroni-corrected' : formatPerc(confidence_level)"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " "
+              },
+              {
+                "type": "component",
+                "name": "cell-view",
+                "properties": {
+                  "inline": {
+                    "type": "value",
+                    "value": true
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "bootstrap ? 'BCa bootstrap' : 't-based'"
+                  }
+                ]
+              },
+              {
+                "type": "textnode",
+                "value": " CIs."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "component",
+            "name": "crossref",
+            "properties": {
+              "type": {
+                "type": "value",
+                "value": "fig"
+              },
+              "xref": {
+                "type": "value",
+                "value": "figB"
+              }
+            }
+          },
+          {
+            "type": "textnode",
+            "value": " provides good evidence that "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "i)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "physical touch"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " is faster on average than "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "physical no touch"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", and that "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "ii)"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "physical no touch"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " is faster than "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "virtual prop"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ". This suggests that both visual realism (e.g., rich depth cues) and physical touch can facilitate basic information retrieval. Importantly, these two properties are unique to physical objects and are hard to faithfully reproduce in virtual setups. In contrast, we could not find evidence that physical object rotation (as opposed to mouse-operated rotation) provides a performance advantage for information retrieval."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "h1",
+        "properties": {
+          "id": {
+            "type": "value",
+            "value": "conclusion"
+          }
+        },
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Discussion and Conclusion"
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Our findings for experiment 2 are in line with the previously published study "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Jansen2013"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 5
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ". In the present article, the default analysis options reflect the choices made in the previously published analysis – thus, the figures are by default identical. On top of this, we consider alternative choices in statistical analysis and presentation, which together yield a total 56 unique analyses and results. The conclusions are largely robust to these choices. Results are less clean with untransformed data, likely because abnormally high completion times are given as much weight as other observations. The use of a log transformation addresses this issue without the need for outlier removal "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Sauro2010"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 8
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "Meanwhile, the use of bootstrap CIs makes the results slightly stronger, although this is likely because bootstrap CIs are slightly too liberal for small sample sizes "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Kirby2013"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 6
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "We did not re-analyze experiment 1 to keep this article simple. Since experiment 1 used four conditions and the reported analysis included a figure with seven comparisons "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Jansen2013"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 5
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", it is possible that some of the effects become much less conclusive after correcting for multiplicity. Multiplicity correction is however a contested practice "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Baguley2012"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 2
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": ", thus it is generally best to consider both corrected and uncorrected interval estimates."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "p",
+        "children": [
+          {
+            "type": "textnode",
+            "value": "The goal of this article was to illustrate how the ideas of "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "multiverse analysis"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Steegen2016"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 9
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " and of "
+          },
+          {
+            "type": "component",
+            "name": "em",
+            "children": [
+              {
+                "type": "textnode",
+                "value": "explorable explanation"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Victor2011"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 10
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": " can be combined to produce more transparent and more compelling statistical reports. We only provided a few analysis options, and many more options could have been included. In addition, our choice of analysis options was highly personal and subjective. Steegen et al. have argued that multiverse analyses are necessarily incomplete and subjective, but are nonetheless way more transparent than conventional analyses where no information is provided about the robustness or fragility of researchers’ findings "
+          },
+          {
+            "type": "component",
+            "name": "citelist",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "cite-list"
+              }
+            },
+            "children": [
+              {
+                "type": "textnode",
+                "value": "["
+              },
+              {
+                "type": "component",
+                "name": "citeref",
+                "properties": {
+                  "key": {
+                    "type": "value",
+                    "value": "Steegen2016"
+                  },
+                  "index": {
+                    "type": "value",
+                    "value": 9
+                  }
+                }
+              },
+              {
+                "type": "textnode",
+                "value": "]"
+              }
+            ]
+          },
+          {
+            "type": "textnode",
+            "value": "."
+          }
+        ]
+      },
+      {
+        "type": "component",
+        "name": "references",
+        "children": [
+          {
+            "type": "component",
+            "name": "ol",
+            "properties": {
+              "class": {
+                "type": "value",
+                "value": "references"
+              }
+            },
+            "children": [
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-0"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Amrhein, V., Korner-Nievergelt, F., & Roth, T. (2017). The earth is flat (p> 0.05): significance thresholds and the crisis of unreplicable research. PeerJ, 5, e3544. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://peerj.com/articles/3544/?utm_source=TrendMD&utm_campaign=PeerJ_TrendMD_0&utm_medium=TrendMD"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://peerj.com/articles/3544/?utm_source=TrendMD&utm_campaign=PeerJ_TrendMD_0&utm_medium=TrendMD"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-1"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Baguley, T. (2012). Serious Stats: A Guide to Advanced Statistics for the Behavioral Science. Palgrave Macmillan."
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-2"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Cumming, G. (2012). Understanding the New Statistics: Effect Sizes, Confidence Intervals, and Meta-analysis. Routledge. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://market.android.com/details?id=book-AVBDYgEACAAJ"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://market.android.com/details?id=book-AVBDYgEACAAJ"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-3"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Dragicevic, P. (2016). Fair Statistical Communication in HCI. In J. Robertson & M. Kaptein (Eds.), Modern Statistical Methods for HCI (pp. 291–330). Springer International Publishing. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.1007/978-3-319-26633-6\\_13"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.1007/978-3-319-26633-6\\_13"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-4"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Jansen, Y., Dragicevic, P., & Fekete, J.-D. (2013). Evaluating the Efficiency of Physical Visualizations. Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, 2593–2602. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.1145/2470654.2481359"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.1145/2470654.2481359"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-5"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Kirby, K. N., & Gerlanc, D. (2013). BootES: an R package for bootstrap confidence intervals on effect sizes. Behavior Research Methods, 45(4), 905–927. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.3758/s13428-013-0330-5"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.3758/s13428-013-0330-5"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-6"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Morey, R. D., Hoekstra, R., Rouder, J. N., Lee, M. D., & Wagenmakers, E.-J. (2016). The fallacy of placing confidence in confidence intervals. Psychonomic Bulletin & Review, 23(1), 103–123. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.3758/s13423-015-0947-8"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.3758/s13423-015-0947-8"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-7"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Sauro, J., & Lewis, J. R. (2010). Average task times in usability tests: what to report? Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, 2347–2350. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.1145/1753326.1753679"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.1145/1753326.1753679"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-8"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Steegen, S., Tuerlinckx, F., Gelman, A., & Vanpaemel, W. (2016). Increasing Transparency Through a Multiverse Analysis. Perspectives on Psychological Science: A Journal of the Association for Psychological Science, 11(5), 702–712. "
+                  },
+                  {
+                    "type": "component",
+                    "name": "link",
+                    "properties": {
+                      "href": {
+                        "type": "value",
+                        "value": "https://doi.org/10.1177/1745691616658637"
+                      }
+                    },
+                    "children": [
+                      {
+                        "type": "textnode",
+                        "value": "https://doi.org/10.1177/1745691616658637"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "component",
+                "name": "li",
+                "properties": {
+                  "id": {
+                    "type": "value",
+                    "value": "ref-9"
+                  }
+                },
+                "children": [
+                  {
+                    "type": "textnode",
+                    "value": "Victor, B. (2011). Explorable explanations. Bret Victor, 10."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "data": {
+    "citations": {
+      "bibtex": [
+        "@article{Amrhein2017,\n\tauthor = {Amrhein, Valentin and Korner-Nievergelt, Fr{\\\" a}nzi and Roth, Tobias},\n\tjournal = {PeerJ},\n\tyear = {2017},\n\tpages = {e3544},\n\tpublisher = {PeerJ Inc.},\n\ttitle = {The earth is flat (p\\textgreater{} 0.05): significance thresholds and the crisis of unreplicable research},\n\tvolume = {5},\n}",
+        "@misc{Baguley2012,\n\tauthor = {Baguley, T},\n\tyear = {2012},\n\tpublisher = {Palgrave Macmillan},\n\ttitle = {Serious {Stats}: A {Guide} to {Advanced} {Statistics} for the {Behavioral} {Science}.},\n}",
+        "@book{Cumming2012,\n\tauthor = {Cumming, Geoff},\n\tseries = {Multivariate {Applications} {Series}},\n\tyear = {2012},\n\tpublisher = {Routledge},\n\ttitle = {Understanding the {New} {Statistics}: Effect {Sizes}, {Confidence} {Intervals}, and {Meta}-analysis},\n}",
+        "@inbook{Dragicevic2016,\n\taddress = {Cham},\n\tauthor = {Dragicevic, Pierre},\n\tbooktitle = {Modern {Statistical} {Methods} for {HCI}},\n\teditor = {Robertson, Judy and Kaptein, Maurits},\n\tyear = {2016},\n\tpages = {291--330},\n\tpublisher = {Springer International Publishing},\n\ttitle = {Fair {Statistical} {Communication} in {HCI}},\n}",
+        "@inproceedings{Jansen2013,\n\taddress = {New York, NY, USA},\n\tauthor = {Jansen, Yvonne and Dragicevic, Pierre and Fekete, Jean-Daniel},\n\tseries = {CHI '13},\n\tbooktitle = {Proceedings of the {SIGCHI} {Conference} on {Human} {Factors} in {Computing} {Systems}},\n\tyear = {2013},\n\tpages = {2593--2602},\n\torganization = {ACM},\n\ttitle = {Evaluating the {Efficiency} of {Physical} {Visualizations}},\n}",
+        "@article{Kirby2013,\n\tauthor = {Kirby, Kris N and Gerlanc, Daniel},\n\tjournal = {Behavior research methods},\n\tnumber = {4},\n\tyear = {2013},\n\tmonth = {12},\n\tpages = {905--927},\n\tpublisher = {Springer},\n\ttitle = {BootES: an {R} package for bootstrap confidence intervals on effect sizes},\n\tvolume = {45},\n}",
+        "@article{Morey2016,\n\tauthor = {Morey, Richard D and Hoekstra, Rink and Rouder, Jeffrey N and Lee, Michael D and Wagenmakers, Eric-Jan},\n\tjournal = {Psychonomic bulletin & review},\n\tnumber = {1},\n\tyear = {2016},\n\tmonth = {2},\n\tpages = {103--123},\n\ttitle = {The fallacy of placing confidence in confidence intervals},\n\thowpublished = {http://dx.doi.org/10.3758/s13423-015-0947-8},\n\tvolume = {23},\n}",
+        "@inproceedings{Sauro2010,\n\taddress = {Atlanta, Georgia, USA},\n\tauthor = {Sauro, Jeff and Lewis, James R},\n\tbooktitle = {Proceedings of the {SIGCHI} {Conference} on {Human} {Factors} in {Computing} {Systems}},\n\tyear = {2010},\n\tmonth = {4},\n\tpages = {2347--2350},\n\torganization = {ACM},\n\ttitle = {Average task times in usability tests: what to report?},\n}",
+        "@article{Steegen2016,\n\tauthor = {Steegen, Sara and Tuerlinckx, Francis and Gelman, Andrew and Vanpaemel, Wolf},\n\tjournal = {Perspectives on psychological science: a journal of the Association for Psychological Science},\n\tnumber = {5},\n\tyear = {2016},\n\tmonth = {9},\n\tpages = {702--712},\n\ttitle = {Increasing {Transparency} {Through} a {Multiverse} {Analysis}},\n\thowpublished = {http://dx.doi.org/10.1177/1745691616658637},\n\tvolume = {11},\n}",
+        "@article{Victor2011,\n\tauthor = {Victor, Bret},\n\tjournal = {Bret Victor},\n\tyear = {2011},\n\ttitle = {Explorable explanations},\n\tvolume = {10},\n}"
+      ],
+      "csl": [
+        {
+          "container-title": "PeerJ",
+          "author": [
+            {
+              "given": "Valentin",
+              "family": "Amrhein"
+            },
+            {
+              "given": "Fränzi",
+              "family": "Korner-Nievergelt"
+            },
+            {
+              "given": "Tobias",
+              "family": "Roth"
+            }
+          ],
+          "type": "article-journal",
+          "id": "Amrhein2017",
+          "citation-key": "Amrhein2017",
+          "issued": {
+            "date-parts": [
+              [
+                2017
+              ]
+            ]
+          },
+          "page": "e3544",
+          "publisher": "PeerJ Inc.",
+          "title": "The earth is flat (p> 0.05): significance thresholds and the crisis of unreplicable research",
+          "URL": "https://peerj.com/articles/3544/?utm_source=TrendMD&utm_campaign=PeerJ_TrendMD_0&utm_medium=TrendMD",
+          "volume": "5"
+        },
+        {
+          "author": [
+            {
+              "given": "T",
+              "family": "Baguley"
+            }
+          ],
+          "type": "document",
+          "id": "Baguley2012",
+          "citation-key": "Baguley2012",
+          "issued": {
+            "date-parts": [
+              [
+                2012
+              ]
+            ]
+          },
+          "publisher": "Palgrave Macmillan",
+          "title": "Serious Stats: A Guide to Advanced Statistics for the Behavioral Science."
+        },
+        {
+          "author": [
+            {
+              "given": "Geoff",
+              "family": "Cumming"
+            }
+          ],
+          "collection-title": "Multivariate Applications Series",
+          "type": "book",
+          "id": "Cumming2012",
+          "citation-key": "Cumming2012",
+          "ISBN": "9780415879682",
+          "issued": {
+            "date-parts": [
+              [
+                2012
+              ]
+            ]
+          },
+          "language": "en",
+          "publisher": "Routledge",
+          "title": "Understanding the New Statistics: Effect Sizes, Confidence Intervals, and Meta-analysis",
+          "URL": "https://market.android.com/details?id=book-AVBDYgEACAAJ"
+        },
+        {
+          "publisher-place": "Cham",
+          "author": [
+            {
+              "given": "Pierre",
+              "family": "Dragicevic"
+            }
+          ],
+          "container-title": "Modern Statistical Methods for HCI",
+          "DOI": "10.1007/978-3-319-26633-6\\_13",
+          "editor": [
+            {
+              "given": "Judy",
+              "family": "Robertson"
+            },
+            {
+              "given": "Maurits",
+              "family": "Kaptein"
+            }
+          ],
+          "type": "chapter",
+          "id": "Dragicevic2016",
+          "citation-key": "Dragicevic2016",
+          "ISBN": "9783319266336",
+          "issued": {
+            "date-parts": [
+              [
+                2016
+              ]
+            ]
+          },
+          "page": "291-330",
+          "publisher": "Springer International Publishing",
+          "title": "Fair Statistical Communication in HCI",
+          "URL": "https://doi.org/10.1007/978-3-319-26633-6_13"
+        },
+        {
+          "publisher-place": "New York, NY, USA",
+          "author": [
+            {
+              "given": "Yvonne",
+              "family": "Jansen"
+            },
+            {
+              "given": "Pierre",
+              "family": "Dragicevic"
+            },
+            {
+              "given": "Jean-Daniel",
+              "family": "Fekete"
+            }
+          ],
+          "container-title": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+          "collection-title": "CHI '13",
+          "DOI": "10.1145/2470654.2481359",
+          "type": "paper-conference",
+          "id": "Jansen2013",
+          "citation-key": "Jansen2013",
+          "ISBN": "9781450318990",
+          "issued": {
+            "date-parts": [
+              [
+                2013
+              ]
+            ]
+          },
+          "keyword": "3d visualization,evaluation,physical visualization",
+          "page": "2593-2602",
+          "publisher": "ACM",
+          "title": "Evaluating the Efficiency of Physical Visualizations",
+          "URL": "http://doi.acm.org/10.1145/2470654.2481359"
+        },
+        {
+          "container-title": "Behavior research methods",
+          "PMID": "23519455",
+          "author": [
+            {
+              "given": "Kris N",
+              "family": "Kirby"
+            },
+            {
+              "given": "Daniel",
+              "family": "Gerlanc"
+            }
+          ],
+          "DOI": "10.3758/s13428-013-0330-5",
+          "type": "article-journal",
+          "id": "Kirby2013",
+          "citation-key": "Kirby2013",
+          "ISSN": "1554-351X, 1554-3528",
+          "issue": "4",
+          "issued": {
+            "date-parts": [
+              [
+                2013,
+                12
+              ]
+            ]
+          },
+          "language": "en",
+          "page": "905-927",
+          "publisher": "Springer",
+          "title": "BootES: an R package for bootstrap confidence intervals on effect sizes",
+          "URL": "http://dx.doi.org/10.3758/s13428-013-0330-5",
+          "volume": "45"
+        },
+        {
+          "container-title": "Psychonomic bulletin & review",
+          "PMID": "26450628",
+          "author": [
+            {
+              "given": "Richard D",
+              "family": "Morey"
+            },
+            {
+              "given": "Rink",
+              "family": "Hoekstra"
+            },
+            {
+              "given": "Jeffrey N",
+              "family": "Rouder"
+            },
+            {
+              "given": "Michael D",
+              "family": "Lee"
+            },
+            {
+              "given": "Eric-Jan",
+              "family": "Wagenmakers"
+            }
+          ],
+          "DOI": "10.3758/s13423-015-0947-8",
+          "type": "article-journal",
+          "id": "Morey2016",
+          "citation-key": "Morey2016",
+          "ISSN": "1069-9384, 1531-5320",
+          "issue": "1",
+          "issued": {
+            "date-parts": [
+              [
+                2016,
+                2
+              ]
+            ]
+          },
+          "keyword": "Bayesian inference and parameter estimation; Bayesian statistics; Statistical inference; Statistics",
+          "language": "en",
+          "page": "103-123",
+          "title": "The fallacy of placing confidence in confidence intervals",
+          "URL": "http://dx.doi.org/10.3758/s13423-015-0947-8",
+          "volume": "23"
+        },
+        {
+          "publisher-place": "Atlanta, Georgia, USA",
+          "author": [
+            {
+              "given": "Jeff",
+              "family": "Sauro"
+            },
+            {
+              "given": "James R",
+              "family": "Lewis"
+            }
+          ],
+          "container-title": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+          "DOI": "10.1145/1753326.1753679",
+          "type": "paper-conference",
+          "id": "Sauro2010",
+          "citation-key": "Sauro2010",
+          "ISBN": "9781605589299",
+          "issued": {
+            "date-parts": [
+              [
+                2010,
+                4
+              ]
+            ]
+          },
+          "keyword": "geometric mean,median,monte carlo simulations,task times,usability evaluation",
+          "page": "2347-2350",
+          "publisher": "ACM",
+          "title": "Average task times in usability tests: what to report?",
+          "URL": "https://dl.acm.org/citation.cfm?doid=1753326.1753679"
+        },
+        {
+          "container-title": "Perspectives on psychological science: a journal of the Association for Psychological Science",
+          "PMID": "27694465",
+          "author": [
+            {
+              "given": "Sara",
+              "family": "Steegen"
+            },
+            {
+              "given": "Francis",
+              "family": "Tuerlinckx"
+            },
+            {
+              "given": "Andrew",
+              "family": "Gelman"
+            },
+            {
+              "given": "Wolf",
+              "family": "Vanpaemel"
+            }
+          ],
+          "DOI": "10.1177/1745691616658637",
+          "type": "article-journal",
+          "id": "Steegen2016",
+          "citation-key": "Steegen2016",
+          "ISSN": "1745-6916, 1745-6924",
+          "issue": "5",
+          "issued": {
+            "date-parts": [
+              [
+                2016,
+                9
+              ]
+            ]
+          },
+          "keyword": "arbitrary choices; data processing; good research practices; multiverse analysis; selective reporting; transparency",
+          "language": "en",
+          "page": "702-712",
+          "title": "Increasing Transparency Through a Multiverse Analysis",
+          "URL": "http://dx.doi.org/10.1177/1745691616658637",
+          "volume": "11"
+        },
+        {
+          "container-title": "Bret Victor",
+          "author": [
+            {
+              "given": "Bret",
+              "family": "Victor"
+            }
+          ],
+          "type": "article-journal",
+          "id": "Victor2011",
+          "citation-key": "Victor2011",
+          "issued": {
+            "date-parts": [
+              [
+                2011
+              ]
+            ]
+          },
+          "title": "Explorable explanations",
+          "volume": "10"
+        }
+      ],
+      "data": [
+        {
+          "id": "Amrhein2017",
+          "year": 2017,
+          "author": [
+            {
+              "given": "Valentin",
+              "family": "Amrhein"
+            },
+            {
+              "given": "Fränzi",
+              "family": "Korner-Nievergelt"
+            },
+            {
+              "given": "Tobias",
+              "family": "Roth"
+            }
+          ],
+          "title": "The earth is flat (p> 0.05): significance thresholds and the crisis of unreplicable research",
+          "venue": "PeerJ",
+          "url": "https://peerj.com/articles/3544/?utm_source=TrendMD&utm_campaign=PeerJ_TrendMD_0&utm_medium=TrendMD"
+        },
+        {
+          "id": "Baguley2012",
+          "year": 2012,
+          "author": [
+            {
+              "given": "T",
+              "family": "Baguley"
+            }
+          ],
+          "title": "Serious Stats: A Guide to Advanced Statistics for the Behavioral Science."
+        },
+        {
+          "id": "Cumming2012",
+          "year": 2012,
+          "author": [
+            {
+              "given": "Geoff",
+              "family": "Cumming"
+            }
+          ],
+          "title": "Understanding the New Statistics: Effect Sizes, Confidence Intervals, and Meta-analysis",
+          "url": "https://market.android.com/details?id=book-AVBDYgEACAAJ"
+        },
+        {
+          "id": "Dragicevic2016",
+          "doi": "10.1007/978-3-319-26633-6\\_13",
+          "year": 2016,
+          "author": [
+            {
+              "given": "Pierre",
+              "family": "Dragicevic"
+            }
+          ],
+          "title": "Fair Statistical Communication in HCI",
+          "venue": "Modern Statistical Methods for HCI",
+          "url": "https://doi.org/10.1007/978-3-319-26633-6_13"
+        },
+        {
+          "id": "Jansen2013",
+          "doi": "10.1145/2470654.2481359",
+          "s2id": "424d0d3d100201cb08d43d15610a99ac36414159",
+          "year": 2013,
+          "author": [
+            {
+              "given": "Yvonne",
+              "family": "Jansen"
+            },
+            {
+              "given": "Pierre",
+              "family": "Dragicevic"
+            },
+            {
+              "given": "Jean-Daniel",
+              "family": "Fekete"
+            }
+          ],
+          "title": "Evaluating the Efficiency of Physical Visualizations",
+          "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+          "url": "https://www.semanticscholar.org/paper/424d0d3d100201cb08d43d15610a99ac36414159",
+          "abstract": "Data sculptures are an increasingly popular form of physical visualization whose purposes are essentially artistic, communicative or educational. But can physical visualizations help carry out actual information visualization tasks? We present the first infovis study comparing physical to on-screen visualizations. We focus on 3D visualizations, as these are common among physical visualizations but known to be problematic on computers. Taking 3D bar charts as an example, we show that moving visualizations to the physical world can improve users' efficiency at information retrieval tasks. In contrast, augmenting on-screen visualizations with stereoscopic rendering alone or with prop-based manipulation was of limited help. The efficiency of physical visualizations seems to stem from features that are unique to physical objects, such as their ability to be touched and their perfect visual realism. These findings provide empirical motivation for current research on fast digital fabrication and self-reconfiguring interfaces.",
+          "tldr": "It is shown that moving visualizations to the physical world can improve users' efficiency at information retrieval tasks, and provides empirical motivation for current research on fast digital fabrication and self-reconfiguring interfaces."
+        },
+        {
+          "id": "Kirby2013",
+          "doi": "10.3758/s13428-013-0330-5",
+          "s2id": "0ce6e159435e2619bb682f49947ddff7a2b6a0a8",
+          "year": 2013,
+          "author": [
+            {
+              "given": "Kris N",
+              "family": "Kirby"
+            },
+            {
+              "given": "Daniel",
+              "family": "Gerlanc"
+            }
+          ],
+          "title": "BootES: an R package for bootstrap confidence intervals on effect sizes",
+          "venue": "Behavior research methods",
+          "url": "https://www.semanticscholar.org/paper/0ce6e159435e2619bb682f49947ddff7a2b6a0a8"
+        },
+        {
+          "id": "Morey2016",
+          "doi": "10.3758/s13423-015-0947-8",
+          "s2id": "5547f4b2b3e3482a37303528c4d02228062dc20d",
+          "year": 2015,
+          "author": [
+            {
+              "given": "Richard D",
+              "family": "Morey"
+            },
+            {
+              "given": "Rink",
+              "family": "Hoekstra"
+            },
+            {
+              "given": "Jeffrey N",
+              "family": "Rouder"
+            },
+            {
+              "given": "Michael D",
+              "family": "Lee"
+            },
+            {
+              "given": "Eric-Jan",
+              "family": "Wagenmakers"
+            }
+          ],
+          "title": "The fallacy of placing confidence in confidence intervals",
+          "venue": "Psychonomic bulletin & review",
+          "url": "https://www.semanticscholar.org/paper/5547f4b2b3e3482a37303528c4d02228062dc20d"
+        },
+        {
+          "id": "Sauro2010",
+          "doi": "10.1145/1753326.1753679",
+          "s2id": "57bac95d1d6c59605039d275de78382e8abaf333",
+          "year": 2010,
+          "author": [
+            {
+              "given": "Jeff",
+              "family": "Sauro"
+            },
+            {
+              "given": "James R",
+              "family": "Lewis"
+            }
+          ],
+          "title": "Average task times in usability tests: what to report?",
+          "venue": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+          "url": "https://www.semanticscholar.org/paper/57bac95d1d6c59605039d275de78382e8abaf333",
+          "abstract": "The distribution of task time data in usability studies is positively skewed. Practitioners who are aware of this positive skew tend to report the sample median. Monte Carlo simulations using data from 61 large-sample usability tasks showed that the sample median is a biased estimate of the population median. Using the geometric mean to estimate the center of the population will, on average, have 13% less error and 22% less bias than the sample median. Other estimates of the population center (trimmed, harmonic and Winsorized means) had worse performance than the sample median.",
+          "tldr": "Monte Carlo simulations using data from 61 large-sample usability tasks showed that the sample median is a biased estimate of the population median."
+        },
+        {
+          "id": "Steegen2016",
+          "doi": "10.1177/1745691616658637",
+          "s2id": "cd2b3a9f5cfd351b9434fe8da693a5c314c527b6",
+          "year": 2016,
+          "author": [
+            {
+              "given": "Sara",
+              "family": "Steegen"
+            },
+            {
+              "given": "Francis",
+              "family": "Tuerlinckx"
+            },
+            {
+              "given": "Andrew",
+              "family": "Gelman"
+            },
+            {
+              "given": "Wolf",
+              "family": "Vanpaemel"
+            }
+          ],
+          "title": "Increasing Transparency Through a Multiverse Analysis",
+          "venue": "Perspectives on psychological science: a journal of the Association for Psychological Science",
+          "url": "https://www.semanticscholar.org/paper/cd2b3a9f5cfd351b9434fe8da693a5c314c527b6",
+          "abstract": "Empirical research inevitably includes constructing a data set by processing raw data into a form ready for statistical analysis. Data processing often involves choices among several reasonable options for excluding, transforming, and coding data. We suggest that instead of performing only one analysis, researchers could perform a multiverse analysis, which involves performing all analyses across the whole set of alternatively processed data sets corresponding to a large set of reasonable scenarios. Using an example focusing on the effect of fertility on religiosity and political attitudes, we show that analyzing a single data set can be misleading and propose a multiverse analysis as an alternative practice. A multiverse analysis offers an idea of how much the conclusions change because of arbitrary choices in data construction and gives pointers as to which choices are most consequential in the fragility of the result.",
+          "tldr": "It is shown that analyzing a single data set can be misleading and a multiverse analysis is proposed as an alternative practice, which involves performing all analyses across the whole set of alternatively processed data sets corresponding to a large set of reasonable scenarios."
+        },
+        {
+          "id": "Victor2011",
+          "year": 2011,
+          "author": [
+            {
+              "given": "Bret",
+              "family": "Victor"
+            }
+          ],
+          "title": "Explorable explanations",
+          "venue": "Bret Victor"
+        }
+      ]
+    }
+  }
+}

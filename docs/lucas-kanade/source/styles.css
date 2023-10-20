@@ -1,0 +1,14 @@
+:root {
+	--gap-width: 50px;
+	--margin-width: 500px;
+}
+
+.sticky:has(#fig2) {
+	top: 32px;
+}
+
+.figures-aside {
+	max-height: calc(100vh - 2 * var(--article-padding));
+	overflow-y: auto;
+	padding-right: 12px;
+}

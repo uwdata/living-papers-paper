@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "@living-papers/example-reactive",
+  "description": "Living Papers example with reactive updates.",
+  "scripts": {
+    "build": "lpub -o build reactive.md && lpub -o build/import import.md"
+  },
+  "devDependencies": {
+    "@living-papers/cli": "*"
+  }
+}
