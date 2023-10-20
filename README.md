@@ -1,9 +1,11 @@
 # The Living Papers Paper
 
-The UIST'23 Living Papers research paper and supplemental material.
+The UIST'23 [Living Papers](https://github.com/uwdata/living-papers/) research paper and supplemental material.
 
 View the paper and supplemental material online here:
-[http://uwdata.github.io/living-papers-paper/]
+[http://uwdata.github.io/living-papers-paper/](http://uwdata.github.io/living-papers-paper/)
+
+To write your own articles, see the [main Living Papers repository](https://github.com/uwdata/living-papers/).
 
 ## Build Instructions
 
